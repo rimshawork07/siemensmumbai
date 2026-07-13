@@ -1,24 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/site/Header";
+import { SiteFooter } from "@/components/site/Footer";
+import { StickyMobileBar } from "@/components/site/ContactButtons";
+import {
+  Hero, IntroBlurb, Stats, Services, WhyChooseUs, FAQ, About, BookingSection,
+} from "@/components/site/Sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Siemens Washing Machine Repair Service in Mumbai | Same Day Service" },
+      {
+        name: "description",
+        content:
+          "Expert independent Siemens washing machine repair service in Mumbai. Same-day service, genuine spare parts, experienced technicians and 1-year parts warranty. Call now.",
+      },
+      { name: "keywords", content: "Siemens Washing Machine Repair Mumbai, Siemens Washing Machine Service Mumbai, Front Load Washing Machine Repair Mumbai, Top Load Washing Machine Repair Mumbai, Fully Automatic Washing Machine Repair Mumbai, Washing Machine Repair Near Me, Siemens Service Center Mumbai" },
+      { property: "og:title", content: "Siemens Washing Machine Repair Service in Mumbai" },
+      { property: "og:description", content: "Same-day independent Siemens washing machine repair across Mumbai. Genuine parts. 1-year warranty." },
+      { property: "og:url", content: "/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Siemens Washing Machine Repair in Mumbai" },
+      { name: "twitter:description", content: "Same-day service, genuine spare parts, 1-year parts warranty." },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <SiteHeader />
+      <main>
+        <Hero
+          heading="Independent Siemens Washing Machine Repair Specialists in Mumbai"
+          subheading="We provide professional repair and servicing for Siemens washing machines across Mumbai. Our experienced technicians specialize in front-load, top-load, and fully automatic Siemens washing machines with same-day service and a 1-year warranty on installed parts."
+        />
+        <IntroBlurb />
+        <Stats />
+        <Services />
+        <BookingSection />
+        <WhyChooseUs />
+        <About />
+        <FAQ />
+      </main>
+      <SiteFooter />
+      <StickyMobileBar />
+    </>
   );
 }
