@@ -63,8 +63,8 @@ const orgJsonLd = {
   name: "Independent Siemens Washing Machine Repair Specialists in Mumbai",
   description:
     "Independent Siemens washing machine repair and service in Mumbai. Same-day service, genuine spare parts, experienced technicians, 1-year warranty.",
-  telephone: "+91XXXXXXXXXX",
-  email: "test@example.com",
+  telephone: "+917710074028",
+  email: "support@siemensmumbai.in",
   areaServed: "Mumbai",
   address: { "@type": "PostalAddress", addressLocality: "Mumbai", addressRegion: "MH", addressCountry: "IN" },
   priceRange: "₹₹",
