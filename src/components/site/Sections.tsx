@@ -17,7 +17,7 @@ export function Hero({ heading, subheading }: { heading?: string; subheading?: s
             {heading ?? "Siemens Washing Machine Repair Service in Mumbai"}
           </h1>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {subheading ?? "Expert repair and servicing for Siemens washing machines with same-day service, genuine spare parts, and a 1-year warranty on installed parts."}
+            {subheading ?? "Expert repair and servicing for Siemens washing machines across Mumbai with same-day service, experienced technicians, and quality spare parts."}
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             <CallButton />
@@ -26,8 +26,8 @@ export function Hero({ heading, subheading }: { heading?: string; subheading?: s
           </div>
           <ul className="mt-6 grid grid-cols-2 gap-2 text-sm">
             {[
-              ["Same Day Service", Clock],
-              ["1 Year Parts Warranty", ShieldCheck],
+              ["4.9 Rated Service", Star],
+              ["Same-Day Service Across Mumbai", Clock],
               ["Genuine Spare Parts", BadgeCheck],
               ["Experienced Technicians", Award],
             ].map(([label, Icon]: any) => (
