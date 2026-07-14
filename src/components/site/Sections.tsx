@@ -136,6 +136,9 @@ export function Services() {
           </article>
         ))}
       </div>
+      <p className="mx-auto mt-8 max-w-3xl rounded-xl border border-border bg-white p-4 text-center text-sm text-muted-foreground">
+        We specialize in Siemens washing machine repairs and also provide repair services for all major washing machine brands.
+      </p>
     </section>
   );
 }
