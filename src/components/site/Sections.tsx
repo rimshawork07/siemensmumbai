@@ -120,7 +120,7 @@ export function Services() {
     <section id="services" className="mx-auto max-w-6xl px-4 py-12">
       <div className="text-center">
         <h2 className="text-2xl font-extrabold sm:text-3xl">Our Siemens Washing Machine Services</h2>
-        <p className="mt-2 text-muted-foreground">Specialists in Siemens washing machines only — nothing else.</p>
+        <p className="mt-2 text-muted-foreground">Siemens specialists — also servicing all major washing machine brands.</p>
       </div>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map(({ title, desc, Icon }) => (
