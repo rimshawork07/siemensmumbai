@@ -40,6 +40,20 @@ export function BookButton({ className = "", label = "Book Service" }: { classNa
   );
 }
 
+export function FloatingWhatsApp() {
+  return (
+    <a
+      href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent("Hi, I need Siemens washing machine repair service in Mumbai.")}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+      className="fixed right-4 z-40 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-white shadow-xl ring-4 ring-white/60 transition hover:scale-105 bottom-20 md:bottom-6"
+    >
+      <MessageCircle className="h-7 w-7" aria-hidden />
+    </a>
+  );
+}
+
 export function StickyMobileBar() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 gap-px border-t border-border bg-border shadow-[0_-4px_16px_rgba(0,0,0,0.08)] md:hidden">

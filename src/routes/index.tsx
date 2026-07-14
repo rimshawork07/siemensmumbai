@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
-import { StickyMobileBar } from "@/components/site/ContactButtons";
+import { StickyMobileBar, FloatingWhatsApp } from "@/components/site/ContactButtons";
 import {
   Hero, IntroBlurb, Stats, Services, WhyChooseUs, FAQ, About, BookingSection,
 } from "@/components/site/Sections";
@@ -47,6 +47,7 @@ function Index() {
       </main>
       <SiteFooter />
       <StickyMobileBar />
+      <FloatingWhatsApp />
     </>
   );
 }

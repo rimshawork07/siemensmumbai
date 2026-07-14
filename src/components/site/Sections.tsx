@@ -1,6 +1,6 @@
 import {
   Wrench, Sparkles, WashingMachine, Layers, Cog, ShieldCheck, Clock, BadgeCheck,
-  IndianRupee, Users, ThumbsUp, Award, Phone,
+  IndianRupee, Users, ThumbsUp, Award, Phone, Star,
 } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { CallButton, WhatsAppButton, BookButton } from "./ContactButtons";
@@ -17,7 +17,7 @@ export function Hero({ heading, subheading }: { heading?: string; subheading?: s
             {heading ?? "Siemens Washing Machine Repair Service in Mumbai"}
           </h1>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {subheading ?? "Expert repair and servicing for Siemens washing machines with same-day service, genuine spare parts, and a 1-year warranty on installed parts."}
+            {subheading ?? "Expert repair and servicing for Siemens washing machines across Mumbai with same-day service, experienced technicians, and quality spare parts."}
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             <CallButton />
@@ -26,8 +26,8 @@ export function Hero({ heading, subheading }: { heading?: string; subheading?: s
           </div>
           <ul className="mt-6 grid grid-cols-2 gap-2 text-sm">
             {[
-              ["Same Day Service", Clock],
-              ["1 Year Parts Warranty", ShieldCheck],
+              ["4.9 Rated Service", Star],
+              ["Same-Day Service Across Mumbai", Clock],
               ["Genuine Spare Parts", BadgeCheck],
               ["Experienced Technicians", Award],
             ].map(([label, Icon]: any) => (
@@ -120,7 +120,7 @@ export function Services() {
     <section id="services" className="mx-auto max-w-6xl px-4 py-12">
       <div className="text-center">
         <h2 className="text-2xl font-extrabold sm:text-3xl">Our Siemens Washing Machine Services</h2>
-        <p className="mt-2 text-muted-foreground">Specialists in Siemens washing machines only — nothing else.</p>
+        <p className="mt-2 text-muted-foreground">Siemens specialists — also servicing all major washing machine brands.</p>
       </div>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map(({ title, desc, Icon }) => (
@@ -136,6 +136,9 @@ export function Services() {
           </article>
         ))}
       </div>
+      <p className="mx-auto mt-8 max-w-3xl rounded-xl border border-border bg-white p-4 text-center text-sm text-muted-foreground">
+        We specialize in Siemens washing machine repairs and also provide repair services for all major washing machine brands.
+      </p>
     </section>
   );
 }
