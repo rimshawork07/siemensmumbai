@@ -3,25 +3,26 @@ import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
 import { StickyMobileBar, FloatingWhatsApp } from "@/components/site/ContactButtons";
 import {
-  Hero, IntroBlurb, Stats, Services, WhyChooseUs, FAQ, About, BookingSection,
+  Hero, IntroBlurb, Stats, Services, WhyChooseUs, WarrantySection,
+  Testimonials, ServiceArea, FAQ, About, BookingSection,
 } from "@/components/site/Sections";
+
+const title = "Siemens Washing Machine Repair Service in Mumbai | Same-Day Service";
+const description = "Trusted independent Siemens washing machine repair across Mumbai. Same-day service, experienced technicians, genuine spare parts, and 1+ year warranty on installed parts. Call +91 77100 74028.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Siemens Washing Machine Repair Service in Mumbai | Same Day Service" },
-      {
-        name: "description",
-        content:
-          "Expert independent Siemens washing machine repair service in Mumbai. Same-day service, genuine spare parts, experienced technicians and 1-year parts warranty. Call now.",
-      },
-      { name: "keywords", content: "Siemens Washing Machine Repair Mumbai, Siemens Washing Machine Service Mumbai, Front Load Washing Machine Repair Mumbai, Top Load Washing Machine Repair Mumbai, Fully Automatic Washing Machine Repair Mumbai, Washing Machine Repair Near Me, Siemens Service Center Mumbai" },
-      { property: "og:title", content: "Siemens Washing Machine Repair Service in Mumbai | Same Day Service" },
-      { property: "og:description", content: "Expert independent Siemens washing machine repair service in Mumbai. Same-day service, genuine spare parts, experienced technicians and 1-year parts warranty. Call now." },
+      { title },
+      { name: "description", content: description },
+      { name: "keywords", content: "Siemens Washing Machine Repair Mumbai, Washing Machine Repair Mumbai, Same Day Washing Machine Repair Mumbai, Front Load Washing Machine Repair Mumbai, Top Load Washing Machine Repair Mumbai, Fully Automatic Washing Machine Repair Mumbai, Washing Machine Service Near Me, Bosch Washing Machine Repair Mumbai" },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
-      { name: "twitter:title", content: "Siemens Washing Machine Repair Service in Mumbai | Same Day Service" },
-      { name: "twitter:description", content: "Expert independent Siemens washing machine repair service in Mumbai. Same-day service, genuine spare parts, experienced technicians and 1-year parts warranty. Call now." },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -35,13 +36,16 @@ function Index() {
       <main>
         <Hero
           heading="Independent Siemens Washing Machine Repair Specialists in Mumbai"
-          subheading="We provide professional repair and servicing for Siemens washing machines across Mumbai. Our experienced technicians specialize in front-load, top-load, and fully automatic Siemens washing machines with same-day service and a 1-year warranty on installed parts."
+          subheading="Trusted, professional washing machine repair across Mumbai — carried out by experienced, background-verified technicians with same-day service and genuine spare parts."
         />
-        <IntroBlurb />
         <Stats />
+        <IntroBlurb />
         <Services />
         <BookingSection />
+        <WarrantySection />
         <WhyChooseUs />
+        <Testimonials />
+        <ServiceArea />
         <About />
         <FAQ />
       </main>

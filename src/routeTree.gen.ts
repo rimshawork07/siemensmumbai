@@ -13,7 +13,9 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AreasNaviMumbaiRouteImport } from './routes/areas.navi-mumbai'
+import { Route as AreasThaneRouteImport } from './routes/areas.thane'
+import { Route as AreasPowaiRouteImport } from './routes/areas.powai'
+import { Route as AreasMulundRouteImport } from './routes/areas.mulund'
 import { Route as AreasMahimRouteImport } from './routes/areas.mahim'
 import { Route as AreasDadarRouteImport } from './routes/areas.dadar'
 import { Route as AreasBorivaliRouteImport } from './routes/areas.borivali'
@@ -40,9 +42,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AreasNaviMumbaiRoute = AreasNaviMumbaiRouteImport.update({
-  id: '/areas/navi-mumbai',
-  path: '/areas/navi-mumbai',
+const AreasThaneRoute = AreasThaneRouteImport.update({
+  id: '/areas/thane',
+  path: '/areas/thane',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasPowaiRoute = AreasPowaiRouteImport.update({
+  id: '/areas/powai',
+  path: '/areas/powai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasMulundRoute = AreasMulundRouteImport.update({
+  id: '/areas/mulund',
+  path: '/areas/mulund',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AreasMahimRoute = AreasMahimRouteImport.update({
@@ -81,7 +93,9 @@ export interface FileRoutesByFullPath {
   '/areas/borivali': typeof AreasBorivaliRoute
   '/areas/dadar': typeof AreasDadarRoute
   '/areas/mahim': typeof AreasMahimRoute
-  '/areas/navi-mumbai': typeof AreasNaviMumbaiRoute
+  '/areas/mulund': typeof AreasMulundRoute
+  '/areas/powai': typeof AreasPowaiRoute
+  '/areas/thane': typeof AreasThaneRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -93,7 +107,9 @@ export interface FileRoutesByTo {
   '/areas/borivali': typeof AreasBorivaliRoute
   '/areas/dadar': typeof AreasDadarRoute
   '/areas/mahim': typeof AreasMahimRoute
-  '/areas/navi-mumbai': typeof AreasNaviMumbaiRoute
+  '/areas/mulund': typeof AreasMulundRoute
+  '/areas/powai': typeof AreasPowaiRoute
+  '/areas/thane': typeof AreasThaneRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -106,7 +122,9 @@ export interface FileRoutesById {
   '/areas/borivali': typeof AreasBorivaliRoute
   '/areas/dadar': typeof AreasDadarRoute
   '/areas/mahim': typeof AreasMahimRoute
-  '/areas/navi-mumbai': typeof AreasNaviMumbaiRoute
+  '/areas/mulund': typeof AreasMulundRoute
+  '/areas/powai': typeof AreasPowaiRoute
+  '/areas/thane': typeof AreasThaneRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -120,7 +138,9 @@ export interface FileRouteTypes {
     | '/areas/borivali'
     | '/areas/dadar'
     | '/areas/mahim'
-    | '/areas/navi-mumbai'
+    | '/areas/mulund'
+    | '/areas/powai'
+    | '/areas/thane'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -132,7 +152,9 @@ export interface FileRouteTypes {
     | '/areas/borivali'
     | '/areas/dadar'
     | '/areas/mahim'
-    | '/areas/navi-mumbai'
+    | '/areas/mulund'
+    | '/areas/powai'
+    | '/areas/thane'
   id:
     | '__root__'
     | '/'
@@ -144,7 +166,9 @@ export interface FileRouteTypes {
     | '/areas/borivali'
     | '/areas/dadar'
     | '/areas/mahim'
-    | '/areas/navi-mumbai'
+    | '/areas/mulund'
+    | '/areas/powai'
+    | '/areas/thane'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -157,7 +181,9 @@ export interface RootRouteChildren {
   AreasBorivaliRoute: typeof AreasBorivaliRoute
   AreasDadarRoute: typeof AreasDadarRoute
   AreasMahimRoute: typeof AreasMahimRoute
-  AreasNaviMumbaiRoute: typeof AreasNaviMumbaiRoute
+  AreasMulundRoute: typeof AreasMulundRoute
+  AreasPowaiRoute: typeof AreasPowaiRoute
+  AreasThaneRoute: typeof AreasThaneRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -190,11 +216,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/areas/navi-mumbai': {
-      id: '/areas/navi-mumbai'
-      path: '/areas/navi-mumbai'
-      fullPath: '/areas/navi-mumbai'
-      preLoaderRoute: typeof AreasNaviMumbaiRouteImport
+    '/areas/thane': {
+      id: '/areas/thane'
+      path: '/areas/thane'
+      fullPath: '/areas/thane'
+      preLoaderRoute: typeof AreasThaneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/powai': {
+      id: '/areas/powai'
+      path: '/areas/powai'
+      fullPath: '/areas/powai'
+      preLoaderRoute: typeof AreasPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/mulund': {
+      id: '/areas/mulund'
+      path: '/areas/mulund'
+      fullPath: '/areas/mulund'
+      preLoaderRoute: typeof AreasMulundRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas/mahim': {
@@ -245,7 +285,9 @@ const rootRouteChildren: RootRouteChildren = {
   AreasBorivaliRoute: AreasBorivaliRoute,
   AreasDadarRoute: AreasDadarRoute,
   AreasMahimRoute: AreasMahimRoute,
-  AreasNaviMumbaiRoute: AreasNaviMumbaiRoute,
+  AreasMulundRoute: AreasMulundRoute,
+  AreasPowaiRoute: AreasPowaiRoute,
+  AreasThaneRoute: AreasThaneRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

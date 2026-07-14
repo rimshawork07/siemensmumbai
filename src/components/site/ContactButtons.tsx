@@ -1,6 +1,8 @@
 import { SITE } from "@/lib/site";
 import { Phone, MessageCircle, Calendar } from "lucide-react";
 
+const waHref = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`;
+
 export function CallButton({ className = "", label = "Call Now" }: { className?: string; label?: string }) {
   return (
     <a
@@ -13,11 +15,10 @@ export function CallButton({ className = "", label = "Call Now" }: { className?:
   );
 }
 
-export function WhatsAppButton({ className = "", label = "WhatsApp", message = "Hi, I need Siemens washing machine repair service in Mumbai." }: { className?: string; label?: string; message?: string }) {
-  const href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
+export function WhatsAppButton({ className = "", label = "WhatsApp" }: { className?: string; label?: string }) {
   return (
     <a
-      href={href}
+      href={waHref}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center justify-center gap-2 rounded-lg bg-whatsapp px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:brightness-95 ${className}`}
@@ -43,7 +44,7 @@ export function BookButton({ className = "", label = "Book Service" }: { classNa
 export function FloatingWhatsApp() {
   return (
     <a
-      href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent("Hi, I need Siemens washing machine repair service in Mumbai.")}`}
+      href={waHref}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
@@ -61,12 +62,7 @@ export function StickyMobileBar() {
         <Phone className="h-5 w-5" aria-hidden />
         <span className="text-xs font-semibold">Call Now</span>
       </a>
-      <a
-        href={`https://wa.me/${SITE.whatsapp}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex flex-col items-center justify-center gap-0.5 bg-whatsapp py-2.5 text-white"
-      >
+      <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-0.5 bg-whatsapp py-2.5 text-white">
         <MessageCircle className="h-5 w-5" aria-hidden />
         <span className="text-xs font-semibold">WhatsApp</span>
       </a>
