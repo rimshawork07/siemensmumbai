@@ -13,7 +13,6 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AreasNaviMumbaiRouteImport } from './routes/areas.navi-mumbai'
 import { Route as AreasMahimRouteImport } from './routes/areas.mahim'
 import { Route as AreasDadarRouteImport } from './routes/areas.dadar'
 import { Route as AreasBorivaliRouteImport } from './routes/areas.borivali'
@@ -38,11 +37,6 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AreasNaviMumbaiRoute = AreasNaviMumbaiRouteImport.update({
-  id: '/areas/navi-mumbai',
-  path: '/areas/navi-mumbai',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AreasMahimRoute = AreasMahimRouteImport.update({
@@ -81,7 +75,6 @@ export interface FileRoutesByFullPath {
   '/areas/borivali': typeof AreasBorivaliRoute
   '/areas/dadar': typeof AreasDadarRoute
   '/areas/mahim': typeof AreasMahimRoute
-  '/areas/navi-mumbai': typeof AreasNaviMumbaiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -93,7 +86,6 @@ export interface FileRoutesByTo {
   '/areas/borivali': typeof AreasBorivaliRoute
   '/areas/dadar': typeof AreasDadarRoute
   '/areas/mahim': typeof AreasMahimRoute
-  '/areas/navi-mumbai': typeof AreasNaviMumbaiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -106,7 +98,6 @@ export interface FileRoutesById {
   '/areas/borivali': typeof AreasBorivaliRoute
   '/areas/dadar': typeof AreasDadarRoute
   '/areas/mahim': typeof AreasMahimRoute
-  '/areas/navi-mumbai': typeof AreasNaviMumbaiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -120,7 +111,6 @@ export interface FileRouteTypes {
     | '/areas/borivali'
     | '/areas/dadar'
     | '/areas/mahim'
-    | '/areas/navi-mumbai'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -132,7 +122,6 @@ export interface FileRouteTypes {
     | '/areas/borivali'
     | '/areas/dadar'
     | '/areas/mahim'
-    | '/areas/navi-mumbai'
   id:
     | '__root__'
     | '/'
@@ -144,7 +133,6 @@ export interface FileRouteTypes {
     | '/areas/borivali'
     | '/areas/dadar'
     | '/areas/mahim'
-    | '/areas/navi-mumbai'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -157,7 +145,6 @@ export interface RootRouteChildren {
   AreasBorivaliRoute: typeof AreasBorivaliRoute
   AreasDadarRoute: typeof AreasDadarRoute
   AreasMahimRoute: typeof AreasMahimRoute
-  AreasNaviMumbaiRoute: typeof AreasNaviMumbaiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -188,13 +175,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/areas/navi-mumbai': {
-      id: '/areas/navi-mumbai'
-      path: '/areas/navi-mumbai'
-      fullPath: '/areas/navi-mumbai'
-      preLoaderRoute: typeof AreasNaviMumbaiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas/mahim': {
@@ -245,7 +225,6 @@ const rootRouteChildren: RootRouteChildren = {
   AreasBorivaliRoute: AreasBorivaliRoute,
   AreasDadarRoute: AreasDadarRoute,
   AreasMahimRoute: AreasMahimRoute,
-  AreasNaviMumbaiRoute: AreasNaviMumbaiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
