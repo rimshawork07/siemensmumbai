@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "./Header";
 import { SiteFooter } from "./Footer";
-import { StickyMobileBar } from "./ContactButtons";
+import { StickyMobileBar, FloatingWhatsApp } from "./ContactButtons";
 import { Hero, Services, WhyChooseUs, FAQ, BookingSection, Stats } from "./Sections";
 
 export function AreaPage({ area, blurb }: { area: string; blurb?: string }) {
