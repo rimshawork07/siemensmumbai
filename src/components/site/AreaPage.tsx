@@ -41,6 +41,7 @@ export function AreaPage({ area, blurb }: { area: string; blurb?: string }) {
       </main>
       <SiteFooter />
       <StickyMobileBar />
+      <FloatingWhatsApp />
     </>
   );
 }
