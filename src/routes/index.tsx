@@ -49,6 +49,5 @@ function Index() {
       <StickyMobileBar />
       <FloatingWhatsApp />
     </>
-    </>
   );
 }
