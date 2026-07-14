@@ -2,12 +2,17 @@ import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "./Header";
 import { SiteFooter } from "./Footer";
 import { StickyMobileBar, FloatingWhatsApp } from "./ContactButtons";
-import { Hero, Services, WhyChooseUs, FAQ, BookingSection, Stats } from "./Sections";
+import {
+  Hero, Services, WhyChooseUs, WarrantySection, Testimonials,
+  ServiceArea, FAQ, BookingSection, Stats,
+} from "./Sections";
 
-export function AreaPage({ area, blurb }: { area: string; blurb?: string }) {
+export function AreaPage({ area, blurb, localCopy }: { area: string; blurb?: string; localCopy?: string }) {
   const heading = `Siemens Washing Machine Repair in ${area}`;
   const sub = blurb ??
-    `Looking for Siemens washing machine repair in ${area}? Our experienced technicians provide same-day washing machine repair services in ${area} and nearby areas of Mumbai — with genuine spare parts and a 1-year warranty.`;
+    `Looking for a trusted Siemens washing machine repair service in ${area}? Our experienced technicians provide same-day washing machine repair across ${area} and nearby localities — with genuine spare parts and a 1+ year warranty on installed parts.`;
+  const local = localCopy ??
+    `We serve homes and apartments across ${area} with fast, reliable Siemens washing machine repair. From drum, bearing, and motor issues to drainage, spin, and electronic-board faults, our technicians diagnose and fix problems on the spot using genuine spare parts. Every repair carried out in ${area} is backed by a 1+ year warranty on installed parts.`;
   return (
     <>
       <SiteHeader />
@@ -24,19 +29,20 @@ export function AreaPage({ area, blurb }: { area: string; blurb?: string }) {
         <Hero heading={heading} subheading={sub} />
         <Stats />
         <section className="mx-auto max-w-3xl px-4 py-12">
-          <h2 className="text-2xl font-extrabold sm:text-3xl">
+          <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
             Trusted Siemens Washing Machine Technicians in {area}
           </h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">{local}</p>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            We serve homes and apartments across {area} with fast, reliable Siemens washing machine repair. From drum and motor issues to drainage, spin and electronic board faults, our technicians diagnose and fix problems on the spot using genuine spare parts. Every repair carried out in {area} comes with a 1-year warranty on parts installed by us.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            We repair front-load, top-load, semi and fully automatic Siemens washing machines. Book online, call, or WhatsApp us to arrange a same-day technician visit in {area}.
+            We repair front-load, top-load, semi and fully automatic Siemens washing machines — and service all other major brands. Book online, call, or WhatsApp us to arrange a same-day technician visit in {area}.
           </p>
         </section>
         <Services />
         <BookingSection areaHint={area} />
+        <WarrantySection />
         <WhyChooseUs />
+        <Testimonials />
+        <ServiceArea />
         <FAQ />
       </main>
       <SiteFooter />
@@ -47,8 +53,8 @@ export function AreaPage({ area, blurb }: { area: string; blurb?: string }) {
 }
 
 export function areaHead(area: string, slug: string) {
-  const title = `Siemens Washing Machine Repair in ${area}, Mumbai | Same Day Service`;
-  const desc = `Same-day Siemens washing machine repair in ${area}, Mumbai. Genuine spare parts, experienced technicians, 1-year warranty. Call now.`;
+  const title = `Siemens Washing Machine Repair in ${area}, Mumbai | Same-Day Service`;
+  const desc = `Same-day Siemens washing machine repair in ${area}, Mumbai. Genuine spare parts, experienced technicians, 1+ year warranty on installed parts. Call +91 77100 74028.`;
   const path = `/areas/${slug}`;
   const bcJsonLd = {
     "@context": "https://schema.org",
@@ -66,6 +72,7 @@ export function areaHead(area: string, slug: string) {
       { property: "og:description", content: desc },
       { property: "og:url", content: path },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: desc },
     ],

@@ -1,22 +1,25 @@
 export const SITE = {
-  phone: "+91XXXXXXXXXX",
-  phoneDisplay: "+91 XXXXXXXXXX",
-  whatsapp: "91XXXXXXXXXX", // wa.me format
-  email: "test@example.com",
+  phone: "+917710074028",
+  phoneDisplay: "+91 77100 74028",
+  whatsapp: "917710074028", // wa.me format
+  whatsappMessage: "Hello, I would like to book a washing machine repair service.",
+  email: "support@siemensmumbai.in",
   brand: "Siemens Washing Machine Repair Mumbai",
   longBrand: "Independent Siemens Washing Machine Repair Specialists in Mumbai",
 };
 
+// Locality dropdown for booking form (Mumbai areas we serve — excludes Navi Mumbai & Mira Road)
 export const AREAS = [
-  "Bandra","Mahim","Hill Road","Dharavi","CSMT","Andheri","Borivali","Dadar",
-  "Kurla","Santacruz","Powai","Ghatkopar","Chembur","Vashi","Thane","Mira Road",
-  "Kandivali","Malad","Goregaon","Colaba","Navi Mumbai","Other",
+  "Bandra","Khar","Santacruz","Juhu","Andheri","Vile Parle","Goregaon","Malad",
+  "Kandivali","Borivali","Dahisar","Powai","Bhandup","Mulund","Vikhroli",
+  "Ghatkopar","Kurla","Chembur","Wadala","Dadar","Mahim","Matunga","Sion",
+  "Prabhadevi","Worli","Lower Parel","Byculla","Colaba","Fort","CSMT","Marine Lines",
+  "Grant Road","Tardeo","Bandra Kurla Complex","Thane","Other",
 ];
 
+// Served service areas — displayed publicly
 export const SERVICE_AREAS = [
-  "Bandra","Mahim","Dharavi","Dadar","Andheri","Borivali","Kandivali","Malad",
-  "Goregaon","Powai","Ghatkopar","Chembur","Kurla","Santacruz","CSMT","Colaba",
-  "Vashi","Thane","Mira Road","Navi Mumbai",
+  "South Mumbai","Central Mumbai","Western Mumbai","Powai","Bhandup","Mulund","Thane",
 ];
 
 export const AREA_SLUGS: Record<string, string> = {
@@ -25,5 +28,18 @@ export const AREA_SLUGS: Record<string, string> = {
   andheri: "Andheri",
   dadar: "Dadar",
   borivali: "Borivali",
-  "navi-mumbai": "Navi Mumbai",
+  powai: "Powai",
+  thane: "Thane",
+  mulund: "Mulund",
 };
+
+export const TIME_SLOTS = [
+  "9 AM – 12 PM",
+  "12 PM – 3 PM",
+  "3 PM – 6 PM",
+  "6 PM – 9 PM",
+];
+
+export const BRANDS = [
+  "Siemens","Bosch","LG","Samsung","IFB","Whirlpool","Godrej","Haier","Panasonic","Onida","Videocon","Other",
+];
