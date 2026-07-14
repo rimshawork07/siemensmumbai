@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      service_bookings: {
+        Row: {
+          address_landmark: string | null
+          assigned_technician: string | null
+          created_at: string
+          customer_name: string
+          id: string
+          lead_source: string | null
+          locality: string
+          notes: string | null
+          phone_number: string
+          preferred_service_date: string | null
+          preferred_time_slot: string | null
+          problem_description: string
+          service_type: string | null
+          status: string
+          washing_machine_brand: string | null
+        }
+        Insert: {
+          address_landmark?: string | null
+          assigned_technician?: string | null
+          created_at?: string
+          customer_name: string
+          id?: string
+          lead_source?: string | null
+          locality: string
+          notes?: string | null
+          phone_number: string
+          preferred_service_date?: string | null
+          preferred_time_slot?: string | null
+          problem_description: string
+          service_type?: string | null
+          status?: string
+          washing_machine_brand?: string | null
+        }
+        Update: {
+          address_landmark?: string | null
+          assigned_technician?: string | null
+          created_at?: string
+          customer_name?: string
+          id?: string
+          lead_source?: string | null
+          locality?: string
+          notes?: string | null
+          phone_number?: string
+          preferred_service_date?: string | null
+          preferred_time_slot?: string | null
+          problem_description?: string
+          service_type?: string | null
+          status?: string
+          washing_machine_brand?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
