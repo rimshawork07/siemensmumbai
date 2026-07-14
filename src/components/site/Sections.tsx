@@ -1,6 +1,6 @@
 import {
   Wrench, Sparkles, WashingMachine, Layers, Cog, ShieldCheck, Clock, BadgeCheck,
-  IndianRupee, Users, ThumbsUp, Award, Phone,
+  IndianRupee, Users, ThumbsUp, Award, Phone, Star,
 } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { CallButton, WhatsAppButton, BookButton } from "./ContactButtons";
