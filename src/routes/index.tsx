@@ -7,8 +7,8 @@ import {
   Testimonials, ServiceArea, FAQ, About, BookingSection,
 } from "@/components/site/Sections";
 
-const title = "Siemens Washing Machine Repair Service in Mumbai | Same-Day Service";
-const description = "Trusted independent Siemens washing machine repair across Mumbai. Same-day service, experienced technicians, genuine spare parts, and 1+ year warranty on installed parts. Call +91 77100 74028.";
+const title = "Siemens Washing Machine Repair Mumbai | Same-Day";
+const description = "Same-day Siemens washing machine repair across Mumbai. Genuine spare parts, experienced technicians, 1+ year warranty. Call +91 77100 74028.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
