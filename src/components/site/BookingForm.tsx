@@ -92,45 +92,45 @@ export function BookingForm() {
   return (
     <form onSubmit={onSubmit} className="grid gap-3 rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6">
       <div>
-        <label className="block text-sm font-semibold">Customer Name<span className="text-primary">*</span></label>
-        <input required value={form.customer_name} onChange={(e) => update("customer_name", e.target.value)} className={inputCls} placeholder="Your full name" />
+        <label htmlFor="bf-customer-name" className="block text-sm font-semibold">Customer Name<span className="text-primary">*</span></label>
+        <input id="bf-customer-name" required value={form.customer_name} onChange={(e) => update("customer_name", e.target.value)} className={inputCls} placeholder="Your full name" />
       </div>
       <div>
-        <label className="block text-sm font-semibold">Phone Number<span className="text-primary">*</span></label>
-        <input required type="tel" inputMode="tel" value={form.phone_number} onChange={(e) => update("phone_number", e.target.value)} className={inputCls} placeholder="+91" />
+        <label htmlFor="bf-phone-number" className="block text-sm font-semibold">Phone Number<span className="text-primary">*</span></label>
+        <input id="bf-phone-number" required type="tel" inputMode="tel" value={form.phone_number} onChange={(e) => update("phone_number", e.target.value)} className={inputCls} placeholder="+91" />
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-semibold">Locality<span className="text-primary">*</span></label>
-          <select required value={form.locality} onChange={(e) => update("locality", e.target.value)} className={inputCls}>
+          <label htmlFor="bf-locality" className="block text-sm font-semibold">Locality<span className="text-primary">*</span></label>
+          <select id="bf-locality" required value={form.locality} onChange={(e) => update("locality", e.target.value)} className={inputCls}>
             <option value="">Select locality</option>
             {AREAS.map((a) => <option key={a} value={a}>{a}</option>)}
           </select>
         </div>
         <div>
-          <label className="block text-sm font-semibold">Washing Machine Brand<span className="text-primary">*</span></label>
-          <select required value={form.washing_machine_brand} onChange={(e) => update("washing_machine_brand", e.target.value)} className={inputCls}>
+          <label htmlFor="bf-brand" className="block text-sm font-semibold">Washing Machine Brand<span className="text-primary">*</span></label>
+          <select id="bf-brand" required value={form.washing_machine_brand} onChange={(e) => update("washing_machine_brand", e.target.value)} className={inputCls}>
             <option value="">Select brand</option>
             {BRANDS.map((b) => <option key={b} value={b}>{b}</option>)}
           </select>
         </div>
       </div>
       <div>
-        <label className="block text-sm font-semibold">Address / Landmark</label>
-        <input value={form.address_landmark} onChange={(e) => update("address_landmark", e.target.value)} className={inputCls} placeholder="Building, street, landmark (optional)" />
+        <label htmlFor="bf-landmark" className="block text-sm font-semibold">Address / Landmark</label>
+        <input id="bf-landmark" value={form.address_landmark} onChange={(e) => update("address_landmark", e.target.value)} className={inputCls} placeholder="Building, street, landmark (optional)" />
       </div>
       <div>
-        <label className="block text-sm font-semibold">Problem Description<span className="text-primary">*</span></label>
-        <textarea required rows={3} value={form.problem_description} onChange={(e) => update("problem_description", e.target.value)} className={inputCls} placeholder="Describe the issue with your washing machine." />
+        <label htmlFor="bf-problem" className="block text-sm font-semibold">Problem Description<span className="text-primary">*</span></label>
+        <textarea id="bf-problem" required rows={3} value={form.problem_description} onChange={(e) => update("problem_description", e.target.value)} className={inputCls} placeholder="Describe the issue with your washing machine." />
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-semibold">Preferred Service Date</label>
-          <input type="date" value={form.preferred_service_date} onChange={(e) => update("preferred_service_date", e.target.value)} className={inputCls} />
+          <label htmlFor="bf-date" className="block text-sm font-semibold">Preferred Service Date</label>
+          <input id="bf-date" type="date" value={form.preferred_service_date} onChange={(e) => update("preferred_service_date", e.target.value)} className={inputCls} />
         </div>
         <div>
-          <label className="block text-sm font-semibold">Preferred Time Slot</label>
-          <select value={form.preferred_time_slot} onChange={(e) => update("preferred_time_slot", e.target.value)} className={inputCls}>
+          <label htmlFor="bf-time" className="block text-sm font-semibold">Preferred Time Slot</label>
+          <select id="bf-time" value={form.preferred_time_slot} onChange={(e) => update("preferred_time_slot", e.target.value)} className={inputCls}>
             <option value="">Any time</option>
             {TIME_SLOTS.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>

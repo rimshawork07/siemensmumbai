@@ -7,8 +7,8 @@ import {
   Testimonials, ServiceArea, FAQ, About, BookingSection,
 } from "@/components/site/Sections";
 
-const title = "Siemens Washing Machine Repair Service in Mumbai | Same-Day Service";
-const description = "Trusted independent Siemens washing machine repair across Mumbai. Same-day service, experienced technicians, genuine spare parts, and 1+ year warranty on installed parts. Call +91 77100 74028.";
+const title = "Siemens Washing Machine Repair Mumbai | Same-Day";
+const description = "Same-day Siemens washing machine repair across Mumbai. Genuine spare parts, experienced technicians, 1+ year warranty. Call +91 77100 74028.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,13 +18,13 @@ export const Route = createFileRoute("/")({
       { name: "keywords", content: "Siemens Washing Machine Repair Mumbai, Washing Machine Repair Mumbai, Same Day Washing Machine Repair Mumbai, Front Load Washing Machine Repair Mumbai, Top Load Washing Machine Repair Mumbai, Fully Automatic Washing Machine Repair Mumbai, Washing Machine Service Near Me, Bosch Washing Machine Repair Mumbai" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://siemensmumbai.lovable.app/" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://siemensmumbai.lovable.app/" }],
   }),
   component: Index,
 });

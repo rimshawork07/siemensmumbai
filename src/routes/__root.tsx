@@ -76,21 +76,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#2f9e5f" },
-      { title: "Siemens Washing Machine Repair Service in Mumbai | Same Day Service" },
-      {
-        name: "description",
-        content:
-          "Expert independent Siemens washing machine repair service in Mumbai. Same-day service, genuine spare parts, experienced technicians and 1-year parts warranty. Call now.",
-      },
       { property: "og:site_name", content: "Siemens Washing Machine Repair Mumbai" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Siemens Washing Machine Repair Service in Mumbai | Same Day Service" },
-      { name: "twitter:title", content: "Siemens Washing Machine Repair Service in Mumbai | Same Day Service" },
-      { property: "og:description", content: "Expert independent Siemens washing machine repair service in Mumbai. Same-day service, genuine spare parts, experienced technicians and 1-year parts warranty. Call now." },
-      { name: "twitter:description", content: "Expert independent Siemens washing machine repair service in Mumbai. Same-day service, genuine spare parts, experienced technicians and 1-year parts warranty. Call now." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8341eef0-b717-406f-9dad-8e8e7d545a1e/id-preview-3513b3f4--45f08d9b-01c6-4d41-8af9-028e979d798c.lovable.app-1783957080830.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8341eef0-b717-406f-9dad-8e8e7d545a1e/id-preview-3513b3f4--45f08d9b-01c6-4d41-8af9-028e979d798c.lovable.app-1783957080830.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GuidesSiemensWashingMachineErrorCodesRouteImport } from './routes/guides.siemens-washing-machine-error-codes'
 import { Route as AreasThaneRouteImport } from './routes/areas.thane'
 import { Route as AreasPowaiRouteImport } from './routes/areas.powai'
 import { Route as AreasMulundRouteImport } from './routes/areas.mulund'
@@ -42,6 +43,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuidesSiemensWashingMachineErrorCodesRoute =
+  GuidesSiemensWashingMachineErrorCodesRouteImport.update({
+    id: '/guides/siemens-washing-machine-error-codes',
+    path: '/guides/siemens-washing-machine-error-codes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AreasThaneRoute = AreasThaneRouteImport.update({
   id: '/areas/thane',
   path: '/areas/thane',
@@ -96,6 +103,7 @@ export interface FileRoutesByFullPath {
   '/areas/mulund': typeof AreasMulundRoute
   '/areas/powai': typeof AreasPowaiRoute
   '/areas/thane': typeof AreasThaneRoute
+  '/guides/siemens-washing-machine-error-codes': typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -110,6 +118,7 @@ export interface FileRoutesByTo {
   '/areas/mulund': typeof AreasMulundRoute
   '/areas/powai': typeof AreasPowaiRoute
   '/areas/thane': typeof AreasThaneRoute
+  '/guides/siemens-washing-machine-error-codes': typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,6 +134,7 @@ export interface FileRoutesById {
   '/areas/mulund': typeof AreasMulundRoute
   '/areas/powai': typeof AreasPowaiRoute
   '/areas/thane': typeof AreasThaneRoute
+  '/guides/siemens-washing-machine-error-codes': typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/areas/mulund'
     | '/areas/powai'
     | '/areas/thane'
+    | '/guides/siemens-washing-machine-error-codes'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +166,7 @@ export interface FileRouteTypes {
     | '/areas/mulund'
     | '/areas/powai'
     | '/areas/thane'
+    | '/guides/siemens-washing-machine-error-codes'
   id:
     | '__root__'
     | '/'
@@ -169,6 +181,7 @@ export interface FileRouteTypes {
     | '/areas/mulund'
     | '/areas/powai'
     | '/areas/thane'
+    | '/guides/siemens-washing-machine-error-codes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -184,6 +197,7 @@ export interface RootRouteChildren {
   AreasMulundRoute: typeof AreasMulundRoute
   AreasPowaiRoute: typeof AreasPowaiRoute
   AreasThaneRoute: typeof AreasThaneRoute
+  GuidesSiemensWashingMachineErrorCodesRoute: typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -214,6 +228,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/siemens-washing-machine-error-codes': {
+      id: '/guides/siemens-washing-machine-error-codes'
+      path: '/guides/siemens-washing-machine-error-codes'
+      fullPath: '/guides/siemens-washing-machine-error-codes'
+      preLoaderRoute: typeof GuidesSiemensWashingMachineErrorCodesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas/thane': {
@@ -288,6 +309,8 @@ const rootRouteChildren: RootRouteChildren = {
   AreasMulundRoute: AreasMulundRoute,
   AreasPowaiRoute: AreasPowaiRoute,
   AreasThaneRoute: AreasThaneRoute,
+  GuidesSiemensWashingMachineErrorCodesRoute:
+    GuidesSiemensWashingMachineErrorCodesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
