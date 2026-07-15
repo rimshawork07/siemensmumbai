@@ -96,7 +96,7 @@ export function Stats() {
     "Transparent Pricing",
   ];
   return (
-    <section className="bg-secondary text-white">
+    <section className="bg-navy text-white">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
         <div className="text-center">
           <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Trusted by thousands across Mumbai</h2>
