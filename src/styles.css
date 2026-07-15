@@ -20,6 +20,8 @@
   --color-primary-dark: var(--primary-dark);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   --color-navy: var(--navy);
   --color-whatsapp: var(--whatsapp);
   --color-border: var(--border);
