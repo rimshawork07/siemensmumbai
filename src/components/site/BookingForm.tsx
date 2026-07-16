@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { z } from "zod";
 import { AREAS, BRANDS, TIME_SLOTS, SITE } from "@/lib/site";
 import { supabase } from "@/integrations/supabase/client";
@@ -27,11 +27,50 @@ const initial: FormState = {
   preferred_time_slot: "",
 };
 
+// End hour (24h, local time) for each configured slot.
+const SLOT_END_HOUR: Record<string, number> = {
+  "9 AM – 12 PM": 12,
+  "12 PM – 3 PM": 15,
+  "3 PM – 6 PM": 18,
+  "6 PM – 9 PM": 21,
+};
+
+function todayLocalISO(now: Date) {
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, "0");
+  const d = String(now.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
 export function BookingForm() {
   const [form, setForm] = useState<FormState>(initial);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [now, setNow] = useState<Date>(() => new Date());
+
+  useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 60_000);
+    return () => clearInterval(id);
+  }, []);
+
+  const todayStr = useMemo(() => todayLocalISO(now), [now]);
+  const isToday = form.preferred_service_date === todayStr;
+  const currentHourFloat = now.getHours() + now.getMinutes() / 60;
+
+  function isSlotDisabled(slot: string) {
+    if (!isToday) return false;
+    const end = SLOT_END_HOUR[slot];
+    return end !== undefined && currentHourFloat >= end;
+  }
+
+  // If the currently selected slot becomes disabled (e.g. time ticked past it), clear it.
+  useEffect(() => {
+    if (form.preferred_time_slot && isSlotDisabled(form.preferred_time_slot)) {
+      setForm((f) => ({ ...f, preferred_time_slot: "" }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [now, form.preferred_service_date]);
 
   function update<K extends keyof FormState>(k: K, v: FormState[K]) {
     setForm((f) => ({ ...f, [k]: v }));
@@ -44,6 +83,21 @@ export function BookingForm() {
     if (!parsed.success) {
       setError(parsed.error.issues[0]?.message ?? "Please check the form.");
       return;
+    }
+    // Date/time validation
+    if (parsed.data.preferred_service_date) {
+      if (parsed.data.preferred_service_date < todayStr) {
+        setError("Please select an available date and time slot.");
+        return;
+      }
+      if (
+        parsed.data.preferred_service_date === todayStr &&
+        parsed.data.preferred_time_slot &&
+        isSlotDisabled(parsed.data.preferred_time_slot)
+      ) {
+        setError("Please select an available date and time slot.");
+        return;
+      }
     }
     setSubmitting(true);
     try {
@@ -73,15 +127,25 @@ export function BookingForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-xl border-2 border-primary/30 bg-white p-8 text-center shadow-sm">
+      <div className="rounded-2xl border-2 border-primary/30 bg-white p-6 text-center shadow-sm sm:p-8">
         <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-primary/10 text-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-8 w-8"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
-        <h3 className="mt-4 text-xl font-extrabold">Thank you.</h3>
-        <p className="mt-2 text-sm text-muted-foreground">Our team will contact you shortly.</p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <a href={`tel:${SITE.phone}`} className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">Call {SITE.phoneDisplay}</a>
-          <a href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-whatsapp px-4 py-2.5 text-sm font-semibold text-white">WhatsApp</a>
+        <h3 className="mt-4 text-xl font-extrabold sm:text-2xl">Thank you for booking your washing machine service.</h3>
+        <p className="mt-3 text-sm text-muted-foreground sm:text-base">
+          Our team will contact you shortly to confirm your request.
+        </p>
+        <p className="mt-2 text-sm text-muted-foreground sm:text-base">
+          If you would like to know more about your booking or need to adjust the preferred date or time, please call us directly at{" "}
+          <a href={`tel:${SITE.phone}`} className="font-semibold text-primary">{SITE.phoneDisplay}</a>.
+        </p>
+        <div className="mt-6 flex flex-col justify-center gap-2 sm:flex-row">
+          <a href={`tel:${SITE.phone}`} className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary-dark">
+            <span aria-hidden>📞</span> Call Now
+          </a>
+          <a href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg bg-whatsapp px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:brightness-95">
+            <span aria-hidden>💬</span> WhatsApp Us
+          </a>
         </div>
       </div>
     );
@@ -126,13 +190,31 @@ export function BookingForm() {
       <div className="grid gap-3 sm:grid-cols-2">
         <div>
           <label htmlFor="bf-date" className="block text-sm font-semibold">Preferred Service Date</label>
-          <input id="bf-date" type="date" value={form.preferred_service_date} onChange={(e) => update("preferred_service_date", e.target.value)} className={inputCls} />
+          <input
+            id="bf-date"
+            type="date"
+            min={todayStr}
+            value={form.preferred_service_date}
+            onChange={(e) => {
+              const v = e.target.value;
+              if (v && v < todayStr) return;
+              update("preferred_service_date", v);
+            }}
+            className={inputCls}
+          />
         </div>
         <div>
           <label htmlFor="bf-time" className="block text-sm font-semibold">Preferred Time Slot</label>
           <select id="bf-time" value={form.preferred_time_slot} onChange={(e) => update("preferred_time_slot", e.target.value)} className={inputCls}>
             <option value="">Any time</option>
-            {TIME_SLOTS.map((s) => <option key={s} value={s}>{s}</option>)}
+            {TIME_SLOTS.map((s) => {
+              const disabled = isSlotDisabled(s);
+              return (
+                <option key={s} value={s} disabled={disabled}>
+                  {s}{disabled ? " (unavailable)" : ""}
+                </option>
+              );
+            })}
           </select>
         </div>
       </div>
