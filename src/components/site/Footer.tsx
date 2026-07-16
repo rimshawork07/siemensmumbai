@@ -8,7 +8,7 @@ const AREA_LINKS: Record<string, string> = {
   Andheri: "/areas/andheri",
   Dadar: "/areas/dadar",
   Borivali: "/areas/borivali",
-  "Navi Mumbai": "/areas/navi-mumbai",
+  
 };
 
 export function SiteFooter() {

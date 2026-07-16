@@ -22,7 +22,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/areas/borivali", changefreq: "monthly", priority: "0.8" },
           { path: "/areas/powai", changefreq: "monthly", priority: "0.8" },
           { path: "/areas/mulund", changefreq: "monthly", priority: "0.8" },
-          { path: "/areas/thane", changefreq: "monthly", priority: "0.8" },
+          
           { path: "/guides/siemens-washing-machine-error-codes", changefreq: "monthly", priority: "0.7" },
           { path: "/privacy", changefreq: "yearly", priority: "0.3" },
           { path: "/terms", changefreq: "yearly", priority: "0.3" },
