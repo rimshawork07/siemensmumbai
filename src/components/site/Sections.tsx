@@ -2,7 +2,7 @@ import {
   Wrench, Sparkles, WashingMachine, Layers, Cog, ShieldCheck, Clock, BadgeCheck,
   IndianRupee, Users, ThumbsUp, Award, Phone, Star, MapPin, CheckCircle2, Quote,
 } from "lucide-react";
-import { SITE, SERVICE_AREAS } from "@/lib/site";
+import { SITE, AREA_GROUPS } from "@/lib/site";
 import { CallButton, WhatsAppButton, BookButton } from "./ContactButtons";
 import { BookingForm } from "./BookingForm";
 
@@ -233,7 +233,7 @@ export function WarrantySection() {
 
 const WHY = [
   { title: "Washing Machine Specialists", Icon: WashingMachine, desc: "We repair only washing machines — deep expertise, not generalists." },
-  { title: "Same-Day Service", Icon: Clock, desc: "Book today, get your machine running the same day across most of Mumbai." },
+  { title: "Same-Day Service", Icon: Clock, desc: "Book today and get your washing machine running again with same-day service across Mumbai." },
   { title: "Genuine Spare Parts", Icon: BadgeCheck, desc: "Only genuine, compatible parts used for lasting repairs." },
   { title: "1+ Year Parts Warranty", Icon: ShieldCheck, desc: "Every spare part installed by us is warranty-backed for one year or more." },
   { title: "Experienced Technicians", Icon: Award, desc: "Professionally trained technicians with years of Siemens repair experience." },
@@ -332,39 +332,47 @@ const AREA_HIGHLIGHTS = [
   { name: "Borivali", slug: "borivali" },
   { name: "Powai", slug: "powai" },
   { name: "Mulund", slug: "mulund" },
-  { name: "Thane", slug: "thane" },
 ];
 
 export function ServiceArea() {
   return (
     <section id="areas" className="bg-accent/40">
-      <div className="mx-auto max-w-6xl px-4 py-14">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-12">
         <div className="text-center">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
             <MapPin className="h-3.5 w-3.5" /> Service Coverage
           </span>
-          <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Serving All Areas Across Mumbai</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-            Our technicians provide same-day washing machine repair services across Mumbai and its suburbs.
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Serving All Areas Across Mumbai</h2>
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">
+            We provide washing machine repair services throughout Mumbai city and its suburbs, with professionally trained technicians available across major localities.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICE_AREAS.map((zone) => (
-            <div key={zone} className="flex items-center gap-3 rounded-2xl border border-border bg-white p-4 shadow-sm">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                <MapPin className="h-5 w-5" />
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          {AREA_GROUPS.map(({ zone, localities }) => (
+            <div key={zone} className="rounded-2xl border border-border bg-white p-5 shadow-sm">
+              <div className="flex items-center gap-2">
+                <div className="grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <h3 className="text-base font-bold text-secondary">{zone}</h3>
               </div>
-              <p className="font-semibold text-secondary">{zone}</p>
+              <ul className="mt-3 flex flex-wrap gap-1.5">
+                {localities.map((l) => (
+                  <li key={l} className="rounded-full bg-accent/60 px-2.5 py-1 text-xs font-medium text-secondary">
+                    {l}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
 
-        <p className="mx-auto mt-8 max-w-3xl rounded-xl border border-primary/20 bg-white p-4 text-center text-sm font-medium text-secondary shadow-sm">
-          No matter where you are in Mumbai, our technicians aim to provide fast and reliable same-day washing machine repair service.
+        <p className="mx-auto mt-6 max-w-3xl rounded-xl border border-primary/20 bg-white p-4 text-center text-sm font-medium text-secondary shadow-sm">
+          Our professionally trained technicians are available across major localities throughout Mumbai, helping us provide fast and reliable washing machine repair services.
         </p>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <p className="text-center text-xs font-semibold uppercase tracking-wide text-muted-foreground">Popular localities</p>
           <div className="mt-3 flex flex-wrap justify-center gap-2">
             {AREA_HIGHLIGHTS.map((a) => (
@@ -379,6 +387,7 @@ export function ServiceArea() {
   );
 }
 
+
 /* ---------------- FAQ ---------------- */
 
 const FAQS = [
@@ -386,7 +395,7 @@ const FAQS = [
   { q: "Do you provide warranty on repairs?", a: "Yes. We provide a warranty of one year or more on every spare part installed by us. The exact period depends on the type of part and is confirmed on your service invoice." },
   { q: "Do you repair front-load and top-load washing machines?", a: "Yes, we specialize in front-load, top-load, semi and fully automatic Siemens washing machines and also service all other major brands." },
   { q: "Do you use genuine spare parts?", a: "Yes. We only use genuine and compatible spare parts to ensure lasting repairs." },
-  { q: "Which areas of Mumbai do you cover?", a: "We serve South Mumbai, Central Mumbai, Western Mumbai, Powai, Bhandup, Mulund, and Thane — including Bandra, Andheri, Dadar, Mahim, Borivali, and more." },
+  { q: "Which areas of Mumbai do you cover?", a: "We serve South Mumbai, Central Mumbai, Western Mumbai, and Eastern Mumbai (Powai, Bhandup, Mulund) — including Colaba, Worli, Lower Parel, Dadar, Mahim, Matunga, Chembur, Kurla, Ghatkopar, Bandra, Andheri, Goregaon, Malad, Borivali, Dahisar, Powai and more." },
   { q: "How much does a washing machine repair cost?", a: "The final price depends on the issue and any parts required. Our technician provides an upfront, transparent quote before any work begins — you approve the price before we proceed." },
 ];
 
