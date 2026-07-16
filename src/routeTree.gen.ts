@@ -14,7 +14,6 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GuidesSiemensWashingMachineErrorCodesRouteImport } from './routes/guides.siemens-washing-machine-error-codes'
-import { Route as AreasThaneRouteImport } from './routes/areas.thane'
 import { Route as AreasPowaiRouteImport } from './routes/areas.powai'
 import { Route as AreasMulundRouteImport } from './routes/areas.mulund'
 import { Route as AreasMahimRouteImport } from './routes/areas.mahim'
@@ -49,11 +48,6 @@ const GuidesSiemensWashingMachineErrorCodesRoute =
     path: '/guides/siemens-washing-machine-error-codes',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AreasThaneRoute = AreasThaneRouteImport.update({
-  id: '/areas/thane',
-  path: '/areas/thane',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AreasPowaiRoute = AreasPowaiRouteImport.update({
   id: '/areas/powai',
   path: '/areas/powai',
@@ -102,7 +96,6 @@ export interface FileRoutesByFullPath {
   '/areas/mahim': typeof AreasMahimRoute
   '/areas/mulund': typeof AreasMulundRoute
   '/areas/powai': typeof AreasPowaiRoute
-  '/areas/thane': typeof AreasThaneRoute
   '/guides/siemens-washing-machine-error-codes': typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 export interface FileRoutesByTo {
@@ -117,7 +110,6 @@ export interface FileRoutesByTo {
   '/areas/mahim': typeof AreasMahimRoute
   '/areas/mulund': typeof AreasMulundRoute
   '/areas/powai': typeof AreasPowaiRoute
-  '/areas/thane': typeof AreasThaneRoute
   '/guides/siemens-washing-machine-error-codes': typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 export interface FileRoutesById {
@@ -133,7 +125,6 @@ export interface FileRoutesById {
   '/areas/mahim': typeof AreasMahimRoute
   '/areas/mulund': typeof AreasMulundRoute
   '/areas/powai': typeof AreasPowaiRoute
-  '/areas/thane': typeof AreasThaneRoute
   '/guides/siemens-washing-machine-error-codes': typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 export interface FileRouteTypes {
@@ -150,7 +141,6 @@ export interface FileRouteTypes {
     | '/areas/mahim'
     | '/areas/mulund'
     | '/areas/powai'
-    | '/areas/thane'
     | '/guides/siemens-washing-machine-error-codes'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -165,7 +155,6 @@ export interface FileRouteTypes {
     | '/areas/mahim'
     | '/areas/mulund'
     | '/areas/powai'
-    | '/areas/thane'
     | '/guides/siemens-washing-machine-error-codes'
   id:
     | '__root__'
@@ -180,7 +169,6 @@ export interface FileRouteTypes {
     | '/areas/mahim'
     | '/areas/mulund'
     | '/areas/powai'
-    | '/areas/thane'
     | '/guides/siemens-washing-machine-error-codes'
   fileRoutesById: FileRoutesById
 }
@@ -196,7 +184,6 @@ export interface RootRouteChildren {
   AreasMahimRoute: typeof AreasMahimRoute
   AreasMulundRoute: typeof AreasMulundRoute
   AreasPowaiRoute: typeof AreasPowaiRoute
-  AreasThaneRoute: typeof AreasThaneRoute
   GuidesSiemensWashingMachineErrorCodesRoute: typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 
@@ -235,13 +222,6 @@ declare module '@tanstack/react-router' {
       path: '/guides/siemens-washing-machine-error-codes'
       fullPath: '/guides/siemens-washing-machine-error-codes'
       preLoaderRoute: typeof GuidesSiemensWashingMachineErrorCodesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/areas/thane': {
-      id: '/areas/thane'
-      path: '/areas/thane'
-      fullPath: '/areas/thane'
-      preLoaderRoute: typeof AreasThaneRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas/powai': {
@@ -308,10 +288,19 @@ const rootRouteChildren: RootRouteChildren = {
   AreasMahimRoute: AreasMahimRoute,
   AreasMulundRoute: AreasMulundRoute,
   AreasPowaiRoute: AreasPowaiRoute,
-  AreasThaneRoute: AreasThaneRoute,
   GuidesSiemensWashingMachineErrorCodesRoute:
     GuidesSiemensWashingMachineErrorCodesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

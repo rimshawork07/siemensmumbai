@@ -8,7 +8,7 @@ import {
 } from "@/components/site/Sections";
 
 const title = "Siemens Washing Machine Repair Mumbai | Same-Day";
-const description = "Same-day Siemens washing machine repair across Mumbai. Genuine spare parts, experienced technicians, 1+ year warranty. Call +91 77100 74028.";
+const description = "Same-day Siemens washing machine repair across Mumbai. Genuine spare parts, experienced technicians, 1+ year warranty. Call +91 98338 75771.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

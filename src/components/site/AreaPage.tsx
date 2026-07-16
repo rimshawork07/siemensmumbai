@@ -54,7 +54,7 @@ export function AreaPage({ area, blurb, localCopy }: { area: string; blurb?: str
 
 export function areaHead(area: string, slug: string) {
   const title = `Siemens Washing Machine Repair in ${area}, Mumbai | Same-Day Service`;
-  const desc = `Same-day Siemens washing machine repair in ${area}, Mumbai. Genuine spare parts, experienced technicians, 1+ year warranty on installed parts. Call +91 77100 74028.`;
+  const desc = `Same-day Siemens washing machine repair in ${area}, Mumbai. Genuine spare parts, experienced technicians, 1+ year warranty on installed parts. Call +91 98338 75771.`;
   const path = `/areas/${slug}`;
   const bcJsonLd = {
     "@context": "https://schema.org",
