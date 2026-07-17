@@ -22,66 +22,43 @@ const HERO_BADGES: Array<[string, any]> = [
 
 export function Hero({ heading, subheading }: { heading?: string; subheading?: string }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-accent/60 via-white to-white">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-2 md:py-10 sm:py-14">
-        <div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            <ShieldCheck className="h-3.5 w-3.5" /> Independent Siemens Repair Specialists
+    <section className="relative overflow-hidden">
+      <img
+        src={heroImg.url}
+        alt="Siemens washing machine repair technician in Mumbai"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/60 to-secondary/80" aria-hidden />
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-24 md:py-28">
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/25 backdrop-blur">
+            <ShieldCheck className="h-3.5 w-3.5" /> Siemens Repair Specialists in Mumbai
           </span>
-          <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-secondary sm:text-4xl md:text-5xl">
+          <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow sm:text-4xl md:text-5xl">
             {heading ?? "Siemens Washing Machine Repair Service in Mumbai"}
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {subheading ?? "Trusted, professional washing machine repair across Mumbai — carried out by experienced, background-verified technicians."}
+          <p className="mt-4 text-base font-medium text-white/90 sm:text-lg">
+            {subheading ?? "Same-Day Service • Expert Technicians • Genuine Spare Parts"}
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
+            <BookButton />
             <CallButton />
             <WhatsAppButton />
-            <BookButton />
           </div>
-          <ul className="mt-6 grid grid-cols-2 gap-2 text-sm">
+          <ul className="mt-6 grid max-w-lg grid-cols-2 gap-2 text-sm">
             {HERO_BADGES.map(([label, Icon]) => (
-              <li key={label} className="flex items-center gap-2 rounded-lg bg-white px-3 py-2 shadow-sm ring-1 ring-border">
-                <Icon className="h-4 w-4 text-primary" />
+              <li key={label} className="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2 text-white ring-1 ring-white/20 backdrop-blur">
+                <Icon className="h-4 w-4 text-white" />
                 <span className="font-medium">{label}</span>
               </li>
             ))}
           </ul>
         </div>
-        <div className="relative hidden md:block">
-          <div className="absolute inset-0 rounded-3xl bg-primary/10" />
-          <div className="relative flex h-full flex-col justify-center rounded-3xl border border-primary/20 bg-white p-8 shadow-xl">
-            <div className="flex items-center gap-3">
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary text-primary-foreground">
-                <WashingMachine className="h-7 w-7" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Book in 60 seconds</p>
-                <p className="text-lg font-bold text-secondary">Talk to a technician today</p>
-              </div>
-            </div>
-            <div className="mt-6 grid grid-cols-2 gap-3 text-center">
-              <MiniStat n="2400+" label="Customers Served" />
-              <MiniStat n="5400+" label="Service Requests" />
-              <MiniStat n="5+" label="Years in Business" />
-              <MiniStat n="4.9★" label="Rated Service" />
-            </div>
-            <a href={`tel:${SITE.phone}`} className="mt-6 flex items-center justify-center gap-2 rounded-xl bg-primary py-3 font-bold text-primary-foreground shadow">
-              <Phone className="h-5 w-5" /> {SITE.phoneDisplay}
-            </a>
-          </div>
-        </div>
       </div>
     </section>
-  );
-}
-
-function MiniStat({ n, label }: { n: string; label: string }) {
-  return (
-    <div className="rounded-xl bg-accent/50 p-3">
-      <p className="text-xl font-extrabold text-primary">{n}</p>
-      <p className="text-xs font-medium text-muted-foreground">{label}</p>
-    </div>
   );
 }
 
