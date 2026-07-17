@@ -41,9 +41,11 @@ function Index() {
         <Stats />
         <IntroBlurb />
         <Services />
+        <RepairProcess />
         <BookingSection />
         <WarrantySection />
         <WhyChooseUs />
+        <CustomerTrust />
         <Testimonials />
         <ServiceArea />
         <About />
