@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site/Footer";
 import { StickyMobileBar, FloatingWhatsApp } from "@/components/site/ContactButtons";
 import {
   Hero, IntroBlurb, Stats, Services, WhyChooseUs, WarrantySection,
-  Testimonials, ServiceArea, FAQ, About, BookingSection,
+  Testimonials, ServiceArea, FAQ, About, BookingSection, RepairProcess, CustomerTrust,
 } from "@/components/site/Sections";
 
 const title = "Siemens Washing Machine Repair Mumbai | Same-Day";
