@@ -19,7 +19,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/areas/mahim", changefreq: "monthly", priority: "0.8" },
           { path: "/areas/andheri", changefreq: "monthly", priority: "0.8" },
           { path: "/areas/dadar", changefreq: "monthly", priority: "0.8" },
-          { path: "/areas/borivali", changefreq: "monthly", priority: "0.8" },
           { path: "/areas/powai", changefreq: "monthly", priority: "0.8" },
           { path: "/areas/mulund", changefreq: "monthly", priority: "0.8" },
           

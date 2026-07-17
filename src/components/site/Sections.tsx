@@ -327,7 +327,6 @@ const AREA_HIGHLIGHTS = [
   { name: "Mahim", slug: "mahim" },
   { name: "Dadar", slug: "dadar" },
   { name: "Andheri", slug: "andheri" },
-  { name: "Borivali", slug: "borivali" },
   { name: "Powai", slug: "powai" },
   { name: "Mulund", slug: "mulund" },
 ];
@@ -393,7 +392,7 @@ const FAQS = [
   { q: "Do you provide warranty on repairs?", a: "Yes. We provide a warranty of one year or more on every spare part installed by us. The exact period depends on the type of part and is confirmed on your service invoice." },
   { q: "Do you repair front-load and top-load washing machines?", a: "Yes, we specialize in front-load, top-load, semi and fully automatic Siemens washing machines and also service all other major brands." },
   { q: "Do you use genuine spare parts?", a: "Yes. We only use genuine and compatible spare parts to ensure lasting repairs." },
-  { q: "Which areas of Mumbai do you cover?", a: "We serve South Mumbai, Central Mumbai, Western Mumbai, and Eastern Mumbai (Powai, Bhandup, Mulund) — including Colaba, Worli, Lower Parel, Dadar, Mahim, Matunga, Chembur, Kurla, Ghatkopar, Bandra, Andheri, Goregaon, Malad, Borivali, Dahisar, Powai and more." },
+  { q: "Which areas of Mumbai do you cover?", a: "We serve South Mumbai, Central Mumbai, Western Mumbai, and Eastern Mumbai (Powai, Bhandup, Mulund) — including Colaba, Worli, Lower Parel, Dadar, Mahim, Matunga, Chembur, Kurla, Ghatkopar, Bandra, Andheri, Goregaon, Powai and more." },
   { q: "How much does a washing machine repair cost?", a: "The final price depends on the issue and any parts required. Our technician provides an upfront, transparent quote before any work begins — you approve the price before we proceed." },
 ];
 
