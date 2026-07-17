@@ -18,7 +18,6 @@ import { Route as AreasPowaiRouteImport } from './routes/areas.powai'
 import { Route as AreasMulundRouteImport } from './routes/areas.mulund'
 import { Route as AreasMahimRouteImport } from './routes/areas.mahim'
 import { Route as AreasDadarRouteImport } from './routes/areas.dadar'
-import { Route as AreasBorivaliRouteImport } from './routes/areas.borivali'
 import { Route as AreasBandraRouteImport } from './routes/areas.bandra'
 import { Route as AreasAndheriRouteImport } from './routes/areas.andheri'
 
@@ -68,11 +67,6 @@ const AreasDadarRoute = AreasDadarRouteImport.update({
   path: '/areas/dadar',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AreasBorivaliRoute = AreasBorivaliRouteImport.update({
-  id: '/areas/borivali',
-  path: '/areas/borivali',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AreasBandraRoute = AreasBandraRouteImport.update({
   id: '/areas/bandra',
   path: '/areas/bandra',
@@ -91,7 +85,6 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/areas/andheri': typeof AreasAndheriRoute
   '/areas/bandra': typeof AreasBandraRoute
-  '/areas/borivali': typeof AreasBorivaliRoute
   '/areas/dadar': typeof AreasDadarRoute
   '/areas/mahim': typeof AreasMahimRoute
   '/areas/mulund': typeof AreasMulundRoute
@@ -105,7 +98,6 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/areas/andheri': typeof AreasAndheriRoute
   '/areas/bandra': typeof AreasBandraRoute
-  '/areas/borivali': typeof AreasBorivaliRoute
   '/areas/dadar': typeof AreasDadarRoute
   '/areas/mahim': typeof AreasMahimRoute
   '/areas/mulund': typeof AreasMulundRoute
@@ -120,7 +112,6 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/areas/andheri': typeof AreasAndheriRoute
   '/areas/bandra': typeof AreasBandraRoute
-  '/areas/borivali': typeof AreasBorivaliRoute
   '/areas/dadar': typeof AreasDadarRoute
   '/areas/mahim': typeof AreasMahimRoute
   '/areas/mulund': typeof AreasMulundRoute
@@ -136,7 +127,6 @@ export interface FileRouteTypes {
     | '/terms'
     | '/areas/andheri'
     | '/areas/bandra'
-    | '/areas/borivali'
     | '/areas/dadar'
     | '/areas/mahim'
     | '/areas/mulund'
@@ -150,7 +140,6 @@ export interface FileRouteTypes {
     | '/terms'
     | '/areas/andheri'
     | '/areas/bandra'
-    | '/areas/borivali'
     | '/areas/dadar'
     | '/areas/mahim'
     | '/areas/mulund'
@@ -164,7 +153,6 @@ export interface FileRouteTypes {
     | '/terms'
     | '/areas/andheri'
     | '/areas/bandra'
-    | '/areas/borivali'
     | '/areas/dadar'
     | '/areas/mahim'
     | '/areas/mulund'
@@ -179,7 +167,6 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   AreasAndheriRoute: typeof AreasAndheriRoute
   AreasBandraRoute: typeof AreasBandraRoute
-  AreasBorivaliRoute: typeof AreasBorivaliRoute
   AreasDadarRoute: typeof AreasDadarRoute
   AreasMahimRoute: typeof AreasMahimRoute
   AreasMulundRoute: typeof AreasMulundRoute
@@ -252,13 +239,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasDadarRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/areas/borivali': {
-      id: '/areas/borivali'
-      path: '/areas/borivali'
-      fullPath: '/areas/borivali'
-      preLoaderRoute: typeof AreasBorivaliRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/areas/bandra': {
       id: '/areas/bandra'
       path: '/areas/bandra'
@@ -283,7 +263,6 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   AreasAndheriRoute: AreasAndheriRoute,
   AreasBandraRoute: AreasBandraRoute,
-  AreasBorivaliRoute: AreasBorivaliRoute,
   AreasDadarRoute: AreasDadarRoute,
   AreasMahimRoute: AreasMahimRoute,
   AreasMulundRoute: AreasMulundRoute,
@@ -294,3 +273,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
