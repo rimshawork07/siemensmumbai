@@ -1,10 +1,15 @@
 import {
   Wrench, Sparkles, WashingMachine, Layers, ShieldCheck, Clock, BadgeCheck,
   IndianRupee, Users, ThumbsUp, Award, Phone, Star, MapPin, CheckCircle2, Quote,
+  CalendarCheck, UserCheck, Search, Settings2,
 } from "lucide-react";
 import { SITE, AREA_GROUPS } from "@/lib/site";
 import { CallButton, WhatsAppButton, BookButton } from "./ContactButtons";
 import { BookingForm } from "./BookingForm";
+import heroImg from "@/assets/hero-siemens.png.asset.json";
+import technicianBlueCapImg from "@/assets/technician-bluecap.png.asset.json";
+import technicianToolboxImg from "@/assets/technician-toolbox.png.asset.json";
+import techniciansInspectingImg from "@/assets/technicians-inspecting.png.asset.json";
 
 /* ---------------- HERO ---------------- */
 
@@ -17,66 +22,43 @@ const HERO_BADGES: Array<[string, any]> = [
 
 export function Hero({ heading, subheading }: { heading?: string; subheading?: string }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-accent/60 via-white to-white">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-2 md:py-10 sm:py-14">
-        <div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            <ShieldCheck className="h-3.5 w-3.5" /> Independent Siemens Repair Specialists
+    <section className="relative overflow-hidden">
+      <img
+        src={heroImg.url}
+        alt="Siemens washing machine repair technician in Mumbai"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/60 to-secondary/80" aria-hidden />
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-24 md:py-28">
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/25 backdrop-blur">
+            <ShieldCheck className="h-3.5 w-3.5" /> Siemens Repair Specialists in Mumbai
           </span>
-          <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-secondary sm:text-4xl md:text-5xl">
+          <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow sm:text-4xl md:text-5xl">
             {heading ?? "Siemens Washing Machine Repair Service in Mumbai"}
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {subheading ?? "Trusted, professional washing machine repair across Mumbai — carried out by experienced, background-verified technicians."}
+          <p className="mt-4 text-base font-medium text-white/90 sm:text-lg">
+            {subheading ?? "Same-Day Service • Expert Technicians • Genuine Spare Parts"}
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
+            <BookButton />
             <CallButton />
             <WhatsAppButton />
-            <BookButton />
           </div>
-          <ul className="mt-6 grid grid-cols-2 gap-2 text-sm">
+          <ul className="mt-6 grid max-w-lg grid-cols-2 gap-2 text-sm">
             {HERO_BADGES.map(([label, Icon]) => (
-              <li key={label} className="flex items-center gap-2 rounded-lg bg-white px-3 py-2 shadow-sm ring-1 ring-border">
-                <Icon className="h-4 w-4 text-primary" />
+              <li key={label} className="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2 text-white ring-1 ring-white/20 backdrop-blur">
+                <Icon className="h-4 w-4 text-white" />
                 <span className="font-medium">{label}</span>
               </li>
             ))}
           </ul>
         </div>
-        <div className="relative hidden md:block">
-          <div className="absolute inset-0 rounded-3xl bg-primary/10" />
-          <div className="relative flex h-full flex-col justify-center rounded-3xl border border-primary/20 bg-white p-8 shadow-xl">
-            <div className="flex items-center gap-3">
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary text-primary-foreground">
-                <WashingMachine className="h-7 w-7" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Book in 60 seconds</p>
-                <p className="text-lg font-bold text-secondary">Talk to a technician today</p>
-              </div>
-            </div>
-            <div className="mt-6 grid grid-cols-2 gap-3 text-center">
-              <MiniStat n="2400+" label="Customers Served" />
-              <MiniStat n="5400+" label="Service Requests" />
-              <MiniStat n="5+" label="Years in Business" />
-              <MiniStat n="4.9★" label="Rated Service" />
-            </div>
-            <a href={`tel:${SITE.phone}`} className="mt-6 flex items-center justify-center gap-2 rounded-xl bg-primary py-3 font-bold text-primary-foreground shadow">
-              <Phone className="h-5 w-5" /> {SITE.phoneDisplay}
-            </a>
-          </div>
-        </div>
       </div>
     </section>
-  );
-}
-
-function MiniStat({ n, label }: { n: string; label: string }) {
-  return (
-    <div className="rounded-xl bg-accent/50 p-3">
-      <p className="text-xl font-extrabold text-primary">{n}</p>
-      <p className="text-xs font-medium text-muted-foreground">{label}</p>
-    </div>
   );
 }
 
@@ -241,21 +223,133 @@ const WHY = [
 export function WhyChooseUs() {
   return (
     <section className="bg-muted/40">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-10">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
         <div className="text-center">
           <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Why Choose Us</h2>
           <p className="mt-2 text-muted-foreground">Trusted independent Siemens washing machine repair in Mumbai.</p>
         </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {WHY.map(({ title, desc, Icon }) => (
-            <div key={title} className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-border">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Icon className="h-5 w-5" />
+        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start">
+          <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-border">
+            <img
+              src={technicianBlueCapImg.url}
+              alt="Experienced technician repairing a Siemens washing machine"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {WHY.map(({ title, desc, Icon }) => (
+              <div key={title} className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-border">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-3 text-base font-bold text-secondary">{title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
               </div>
-              <h3 className="mt-3 text-base font-bold text-secondary">{title}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- REPAIR PROCESS ---------------- */
+
+const PROCESS_STEPS = [
+  { n: "01", title: "Book Service", desc: "Call, WhatsApp, or fill the booking form to schedule your repair.", Icon: CalendarCheck },
+  { n: "02", title: "Technician Visit", desc: "A trained technician arrives at your home at the selected time slot.", Icon: UserCheck },
+  { n: "03", title: "Diagnosis", desc: "Complete inspection with an upfront, transparent quote before any work.", Icon: Search },
+  { n: "04", title: "Repair & Testing", desc: "Genuine spare parts installed, followed by full testing and warranty.", Icon: Settings2 },
+];
+
+export function RepairProcess() {
+  return (
+    <section id="process" className="bg-white">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+        <div className="text-center">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            <Wrench className="h-3.5 w-3.5" /> Our Repair Process
+          </span>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Simple, Transparent & Professional</h2>
+          <p className="mt-2 text-muted-foreground">From booking to repair — four clear steps, no surprises.</p>
+        </div>
+        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] lg:items-center">
+          <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-border">
+            <img
+              src={technicianToolboxImg.url}
+              alt="Technician repairing the lower panel of a washing machine"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <ol className="grid gap-3 sm:grid-cols-2">
+            {PROCESS_STEPS.map(({ n, title, desc, Icon }) => (
+              <li key={n} className="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-bold tracking-widest text-primary">{n}</span>
+                  <div className="grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                </div>
+                <h3 className="mt-3 text-base font-bold text-secondary">{title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- CUSTOMER TRUST ---------------- */
+
+const TRUST_INDICATORS = [
+  "2400+ Customers Served",
+  "Same-Day Service",
+  "Genuine Spare Parts",
+  "Warranty on Repairs",
+];
+
+export function CustomerTrust() {
+  return (
+    <section className="bg-accent/40">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] lg:items-center">
+          <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-border">
+            <img
+              src={techniciansInspectingImg.url}
+              alt="Two technicians inspecting a washing machine together"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              <ShieldCheck className="h-3.5 w-3.5" /> Trusted Across Mumbai
+            </span>
+            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+              Repairs You Can Depend On
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              Backed by years of hands-on Siemens expertise, our technicians deliver reliable, warranty-protected repairs — with clear communication at every step.
+            </p>
+            <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+              {TRUST_INDICATORS.map((t) => (
+                <li key={t} className="flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-secondary shadow-sm ring-1 ring-border">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" /> {t}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <BookButton />
+              <CallButton />
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
