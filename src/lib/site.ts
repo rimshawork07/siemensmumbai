@@ -14,7 +14,7 @@ export const AREAS = [
   "Worli","Prabhadevi","Lower Parel","Parel",
   "Dadar","Mahim","Matunga","Sion","Wadala","Dharavi",
   "Bandra","Bandra Kurla Complex","Khar","Santacruz","Juhu","Vile Parle",
-  "Andheri","Jogeshwari","Goregaon","Malad","Kandivali","Borivali","Dahisar",
+  "Andheri","Jogeshwari","Goregaon",
   "Powai","Bhandup","Mulund","Vikhroli","Ghatkopar","Kurla","Chembur",
   "Other",
 ];
@@ -28,7 +28,7 @@ export const SERVICE_AREAS = [
 export const AREA_GROUPS: Array<{ zone: string; localities: string[] }> = [
   { zone: "South Mumbai", localities: ["Colaba","Churchgate","Marine Lines","CSMT","Byculla","Worli","Parel","Lower Parel"] },
   { zone: "Central Mumbai", localities: ["Dadar","Mahim","Dharavi","Matunga","Sion","Wadala","Chembur","Kurla","Ghatkopar"] },
-  { zone: "Western Mumbai", localities: ["Bandra","Khar","Santacruz","Vile Parle","Andheri","Jogeshwari","Goregaon","Malad","Kandivali","Borivali","Dahisar"] },
+  { zone: "Western Mumbai", localities: ["Bandra","Khar","Santacruz","Vile Parle","Andheri","Jogeshwari","Goregaon"] },
   { zone: "Eastern Mumbai", localities: ["Powai","Bhandup","Mulund"] },
 ];
 

@@ -327,7 +327,6 @@ const AREA_HIGHLIGHTS = [
   { name: "Mahim", slug: "mahim" },
   { name: "Dadar", slug: "dadar" },
   { name: "Andheri", slug: "andheri" },
-  { name: "Borivali", slug: "borivali" },
   { name: "Powai", slug: "powai" },
   { name: "Mulund", slug: "mulund" },
 ];
