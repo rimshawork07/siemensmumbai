@@ -1,10 +1,15 @@
 import {
   Wrench, Sparkles, WashingMachine, Layers, ShieldCheck, Clock, BadgeCheck,
   IndianRupee, Users, ThumbsUp, Award, Phone, Star, MapPin, CheckCircle2, Quote,
+  CalendarCheck, UserCheck, Search, Settings2,
 } from "lucide-react";
 import { SITE, AREA_GROUPS } from "@/lib/site";
 import { CallButton, WhatsAppButton, BookButton } from "./ContactButtons";
 import { BookingForm } from "./BookingForm";
+import heroImg from "@/assets/hero-siemens.png.asset.json";
+import technicianBlueCapImg from "@/assets/technician-bluecap.png.asset.json";
+import technicianToolboxImg from "@/assets/technician-toolbox.png.asset.json";
+import techniciansInspectingImg from "@/assets/technicians-inspecting.png.asset.json";
 
 /* ---------------- HERO ---------------- */
 
