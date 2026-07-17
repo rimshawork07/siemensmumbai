@@ -7,7 +7,6 @@ const AREA_LINKS: Array<{ name: string; href: string }> = [
   { name: "Andheri", href: "/areas/andheri" },
   { name: "Dadar", href: "/areas/dadar" },
   { name: "Mahim", href: "/areas/mahim" },
-  { name: "Borivali", href: "/areas/borivali" },
   { name: "Powai", href: "/areas/powai" },
   { name: "Mulund", href: "/areas/mulund" },
 ];

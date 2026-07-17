@@ -37,7 +37,6 @@ export const AREA_SLUGS: Record<string, string> = {
   mahim: "Mahim",
   andheri: "Andheri",
   dadar: "Dadar",
-  borivali: "Borivali",
   powai: "Powai",
   mulund: "Mulund",
 };
