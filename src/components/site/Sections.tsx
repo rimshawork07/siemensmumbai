@@ -223,21 +223,133 @@ const WHY = [
 export function WhyChooseUs() {
   return (
     <section className="bg-muted/40">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-10">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
         <div className="text-center">
           <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Why Choose Us</h2>
           <p className="mt-2 text-muted-foreground">Trusted independent Siemens washing machine repair in Mumbai.</p>
         </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {WHY.map(({ title, desc, Icon }) => (
-            <div key={title} className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-border">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Icon className="h-5 w-5" />
+        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start">
+          <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-border">
+            <img
+              src={technicianBlueCapImg.url}
+              alt="Experienced technician repairing a Siemens washing machine"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {WHY.map(({ title, desc, Icon }) => (
+              <div key={title} className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-border">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-3 text-base font-bold text-secondary">{title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
               </div>
-              <h3 className="mt-3 text-base font-bold text-secondary">{title}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- REPAIR PROCESS ---------------- */
+
+const PROCESS_STEPS = [
+  { n: "01", title: "Book Service", desc: "Call, WhatsApp, or fill the booking form to schedule your repair.", Icon: CalendarCheck },
+  { n: "02", title: "Technician Visit", desc: "A trained technician arrives at your home at the selected time slot.", Icon: UserCheck },
+  { n: "03", title: "Diagnosis", desc: "Complete inspection with an upfront, transparent quote before any work.", Icon: Search },
+  { n: "04", title: "Repair & Testing", desc: "Genuine spare parts installed, followed by full testing and warranty.", Icon: Settings2 },
+];
+
+export function RepairProcess() {
+  return (
+    <section id="process" className="bg-white">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+        <div className="text-center">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            <Wrench className="h-3.5 w-3.5" /> Our Repair Process
+          </span>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Simple, Transparent & Professional</h2>
+          <p className="mt-2 text-muted-foreground">From booking to repair — four clear steps, no surprises.</p>
+        </div>
+        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] lg:items-center">
+          <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-border">
+            <img
+              src={technicianToolboxImg.url}
+              alt="Technician repairing the lower panel of a washing machine"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <ol className="grid gap-3 sm:grid-cols-2">
+            {PROCESS_STEPS.map(({ n, title, desc, Icon }) => (
+              <li key={n} className="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-bold tracking-widest text-primary">{n}</span>
+                  <div className="grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                </div>
+                <h3 className="mt-3 text-base font-bold text-secondary">{title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- CUSTOMER TRUST ---------------- */
+
+const TRUST_INDICATORS = [
+  "2400+ Customers Served",
+  "Same-Day Service",
+  "Genuine Spare Parts",
+  "Warranty on Repairs",
+];
+
+export function CustomerTrust() {
+  return (
+    <section className="bg-accent/40">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] lg:items-center">
+          <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-border">
+            <img
+              src={techniciansInspectingImg.url}
+              alt="Two technicians inspecting a washing machine together"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              <ShieldCheck className="h-3.5 w-3.5" /> Trusted Across Mumbai
+            </span>
+            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+              Repairs You Can Depend On
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              Backed by years of hands-on Siemens expertise, our technicians deliver reliable, warranty-protected repairs — with clear communication at every step.
+            </p>
+            <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+              {TRUST_INDICATORS.map((t) => (
+                <li key={t} className="flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-secondary shadow-sm ring-1 ring-border">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" /> {t}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <BookButton />
+              <CallButton />
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
