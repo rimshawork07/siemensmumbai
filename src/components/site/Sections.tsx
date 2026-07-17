@@ -1,5 +1,5 @@
 import {
-  Wrench, Sparkles, WashingMachine, Layers, Cog, ShieldCheck, Clock, BadgeCheck,
+  Wrench, Sparkles, WashingMachine, Layers, ShieldCheck, Clock, BadgeCheck,
   IndianRupee, Users, ThumbsUp, Award, Phone, Star, MapPin, CheckCircle2, Quote,
 } from "lucide-react";
 import { SITE, AREA_GROUPS } from "@/lib/site";
@@ -147,8 +147,6 @@ const SERVICES = [
   { title: "Washing Machine Service", desc: "Preventive maintenance, deep cleaning, and tune-up service.", Icon: Sparkles },
   { title: "Front Load Repair", desc: "Specialized repair for front-load machines including drum, bearing, and motor.", Icon: WashingMachine },
   { title: "Top Load Repair", desc: "Complete repair solutions for top-load machines.", Icon: Layers },
-  { title: "Fully Automatic Repair", desc: "Repair and servicing for fully automatic models.", Icon: Cog },
-  { title: "Installation & Uninstallation", desc: "Safe installation, relocation, and uninstallation of your washing machine.", Icon: ShieldCheck },
 ];
 
 export function Services() {
