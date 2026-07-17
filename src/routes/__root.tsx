@@ -60,7 +60,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Independent Siemens Washing Machine Repair Specialists in Mumbai",
+  name: "Siemens Washing Machine Repair Specialists in Mumbai",
   description:
     "Independent Siemens washing machine repair and service in Mumbai. Same-day service, genuine spare parts, experienced technicians, 1-year warranty.",
   telephone: "+919833875771",
