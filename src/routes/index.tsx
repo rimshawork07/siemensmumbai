@@ -35,7 +35,7 @@ function Index() {
       <SiteHeader />
       <main>
         <Hero
-          heading="Independent Siemens Washing Machine Repair Specialists in Mumbai"
+          heading="Siemens Washing Machine Repair Specialists in Mumbai"
           subheading="Trusted, professional washing machine repair across Mumbai — carried out by experienced, background-verified technicians with same-day service and genuine spare parts."
         />
         <Stats />

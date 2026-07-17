@@ -5,7 +5,7 @@ export const SITE = {
   whatsappMessage: "Hello, I would like to book a washing machine repair service.",
   email: "support@siemensmumbai.in",
   brand: "Siemens Washing Machine Repair Mumbai",
-  longBrand: "Independent Siemens Washing Machine Repair Specialists in Mumbai",
+  longBrand: "Siemens Washing Machine Repair Specialists in Mumbai",
 };
 
 // Locality dropdown for booking form (Mumbai city & suburbs only — excludes Thane, Navi Mumbai & Mira Road)
