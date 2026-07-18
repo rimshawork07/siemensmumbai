@@ -6,10 +6,16 @@ import {
 import { SITE, AREA_GROUPS } from "@/lib/site";
 import { CallButton, WhatsAppButton, BookButton } from "./ContactButtons";
 import { BookingForm } from "./BookingForm";
-import heroImg from "@/assets/hero-siemens.png.asset.json";
-import technicianBlueCapImg from "@/assets/technician-bluecap.png.asset.json";
-import technicianToolboxImg from "@/assets/technician-toolbox.png.asset.json";
-import techniciansInspectingImg from "@/assets/technicians-inspecting.png.asset.json";
+import heroImgPtr from "@/assets/hero-siemens.png.asset.json";
+import technicianBlueCapPtr from "@/assets/technician-bluecap.png.asset.json";
+import technicianToolboxPtr from "@/assets/technician-toolbox.png.asset.json";
+import techniciansInspectingPtr from "@/assets/technicians-inspecting.png.asset.json";
+import { assetUrl } from "@/lib/asset-url";
+
+const heroImg = { url: assetUrl(heroImgPtr) };
+const technicianBlueCapImg = { url: assetUrl(technicianBlueCapPtr) };
+const technicianToolboxImg = { url: assetUrl(technicianToolboxPtr) };
+const techniciansInspectingImg = { url: assetUrl(techniciansInspectingPtr) };
 
 /* ---------------- HERO ---------------- */
 
