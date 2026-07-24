@@ -9,7 +9,7 @@ const schema = z.object({
   locality: z.string().min(1, "Please select your locality"),
   address_landmark: z.string().trim().max(200).optional().or(z.literal("")),
   washing_machine_brand: z.string().min(1, "Please select the brand"),
-  problem_description: z.string().trim().min(1, "Please describe the problem").max(1000),
+  problem_description: z.string().trim().min(5, "Please describe the problem (minimum 5 characters)").max(1000),
   preferred_service_date: z.string().optional().or(z.literal("")),
   preferred_time_slot: z.string().optional().or(z.literal("")),
 });
