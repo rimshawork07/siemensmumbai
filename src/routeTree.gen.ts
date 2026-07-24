@@ -9,26 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as GuidesSiemensWashingMachineErrorCodesRouteImport } from './routes/guides.siemens-washing-machine-error-codes'
-import { Route as AreasPowaiRouteImport } from './routes/areas.powai'
-import { Route as AreasMulundRouteImport } from './routes/areas.mulund'
-import { Route as AreasMahimRouteImport } from './routes/areas.mahim'
-import { Route as AreasDadarRouteImport } from './routes/areas.dadar'
-import { Route as AreasBandraRouteImport } from './routes/areas.bandra'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AreasAndheriRouteImport } from './routes/areas.andheri'
+import { Route as AreasBandraRouteImport } from './routes/areas.bandra'
+import { Route as AreasDadarRouteImport } from './routes/areas.dadar'
+import { Route as AreasMahimRouteImport } from './routes/areas.mahim'
+import { Route as AreasMulundRouteImport } from './routes/areas.mulund'
+import { Route as AreasPowaiRouteImport } from './routes/areas.powai'
+import { Route as GuidesSiemensWashingMachineErrorCodesRouteImport } from './routes/guides.siemens-washing-machine-error-codes'
 
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -36,9 +31,44 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasAndheriRoute = AreasAndheriRouteImport.update({
+  id: '/areas/andheri',
+  path: '/areas/andheri',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasBandraRoute = AreasBandraRouteImport.update({
+  id: '/areas/bandra',
+  path: '/areas/bandra',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasDadarRoute = AreasDadarRouteImport.update({
+  id: '/areas/dadar',
+  path: '/areas/dadar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasMahimRoute = AreasMahimRouteImport.update({
+  id: '/areas/mahim',
+  path: '/areas/mahim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasMulundRoute = AreasMulundRouteImport.update({
+  id: '/areas/mulund',
+  path: '/areas/mulund',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasPowaiRoute = AreasPowaiRouteImport.update({
+  id: '/areas/powai',
+  path: '/areas/powai',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GuidesSiemensWashingMachineErrorCodesRoute =
@@ -47,36 +77,6 @@ const GuidesSiemensWashingMachineErrorCodesRoute =
     path: '/guides/siemens-washing-machine-error-codes',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AreasPowaiRoute = AreasPowaiRouteImport.update({
-  id: '/areas/powai',
-  path: '/areas/powai',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AreasMulundRoute = AreasMulundRouteImport.update({
-  id: '/areas/mulund',
-  path: '/areas/mulund',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AreasMahimRoute = AreasMahimRouteImport.update({
-  id: '/areas/mahim',
-  path: '/areas/mahim',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AreasDadarRoute = AreasDadarRouteImport.update({
-  id: '/areas/dadar',
-  path: '/areas/dadar',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AreasBandraRoute = AreasBandraRouteImport.update({
-  id: '/areas/bandra',
-  path: '/areas/bandra',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AreasAndheriRoute = AreasAndheriRouteImport.update({
-  id: '/areas/andheri',
-  path: '/areas/andheri',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -176,18 +176,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -197,46 +190,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/guides/siemens-washing-machine-error-codes': {
-      id: '/guides/siemens-washing-machine-error-codes'
-      path: '/guides/siemens-washing-machine-error-codes'
-      fullPath: '/guides/siemens-washing-machine-error-codes'
-      preLoaderRoute: typeof GuidesSiemensWashingMachineErrorCodesRouteImport
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/areas/powai': {
-      id: '/areas/powai'
-      path: '/areas/powai'
-      fullPath: '/areas/powai'
-      preLoaderRoute: typeof AreasPowaiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/areas/mulund': {
-      id: '/areas/mulund'
-      path: '/areas/mulund'
-      fullPath: '/areas/mulund'
-      preLoaderRoute: typeof AreasMulundRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/areas/mahim': {
-      id: '/areas/mahim'
-      path: '/areas/mahim'
-      fullPath: '/areas/mahim'
-      preLoaderRoute: typeof AreasMahimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/areas/dadar': {
-      id: '/areas/dadar'
-      path: '/areas/dadar'
-      fullPath: '/areas/dadar'
-      preLoaderRoute: typeof AreasDadarRouteImport
+    '/areas/andheri': {
+      id: '/areas/andheri'
+      path: '/areas/andheri'
+      fullPath: '/areas/andheri'
+      preLoaderRoute: typeof AreasAndheriRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas/bandra': {
@@ -246,11 +218,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasBandraRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/areas/andheri': {
-      id: '/areas/andheri'
-      path: '/areas/andheri'
-      fullPath: '/areas/andheri'
-      preLoaderRoute: typeof AreasAndheriRouteImport
+    '/areas/dadar': {
+      id: '/areas/dadar'
+      path: '/areas/dadar'
+      fullPath: '/areas/dadar'
+      preLoaderRoute: typeof AreasDadarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/mahim': {
+      id: '/areas/mahim'
+      path: '/areas/mahim'
+      fullPath: '/areas/mahim'
+      preLoaderRoute: typeof AreasMahimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/mulund': {
+      id: '/areas/mulund'
+      path: '/areas/mulund'
+      fullPath: '/areas/mulund'
+      preLoaderRoute: typeof AreasMulundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/powai': {
+      id: '/areas/powai'
+      path: '/areas/powai'
+      fullPath: '/areas/powai'
+      preLoaderRoute: typeof AreasPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/siemens-washing-machine-error-codes': {
+      id: '/guides/siemens-washing-machine-error-codes'
+      path: '/guides/siemens-washing-machine-error-codes'
+      fullPath: '/guides/siemens-washing-machine-error-codes'
+      preLoaderRoute: typeof GuidesSiemensWashingMachineErrorCodesRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -273,3 +273,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

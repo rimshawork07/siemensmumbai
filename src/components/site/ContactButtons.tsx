@@ -3,7 +3,13 @@ import { Phone, MessageCircle, Calendar } from "lucide-react";
 
 const waHref = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`;
 
-export function CallButton({ className = "", label = "Call Now" }: { className?: string; label?: string }) {
+export function CallButton({
+  className = "",
+  label = "Call Now",
+}: {
+  className?: string;
+  label?: string;
+}) {
   return (
     <a
       href={`tel:${SITE.phone}`}
@@ -15,7 +21,13 @@ export function CallButton({ className = "", label = "Call Now" }: { className?:
   );
 }
 
-export function WhatsAppButton({ className = "", label = "WhatsApp" }: { className?: string; label?: string }) {
+export function WhatsAppButton({
+  className = "",
+  label = "WhatsApp",
+}: {
+  className?: string;
+  label?: string;
+}) {
   return (
     <a
       href={waHref}
@@ -29,7 +41,13 @@ export function WhatsAppButton({ className = "", label = "WhatsApp" }: { classNa
   );
 }
 
-export function BookButton({ className = "", label = "Book Service" }: { className?: string; label?: string }) {
+export function BookButton({
+  className = "",
+  label = "Book Service",
+}: {
+  className?: string;
+  label?: string;
+}) {
   return (
     <a
       href="#book"
@@ -58,15 +76,26 @@ export function FloatingWhatsApp() {
 export function StickyMobileBar() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 gap-px border-t border-border bg-border shadow-[0_-4px_16px_rgba(0,0,0,0.08)] md:hidden">
-      <a href={`tel:${SITE.phone}`} className="flex flex-col items-center justify-center gap-0.5 bg-primary py-2.5 text-primary-foreground">
+      <a
+        href={`tel:${SITE.phone}`}
+        className="flex flex-col items-center justify-center gap-0.5 bg-primary py-2.5 text-primary-foreground"
+      >
         <Phone className="h-5 w-5" aria-hidden />
         <span className="text-xs font-semibold">Call Now</span>
       </a>
-      <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-0.5 bg-whatsapp py-2.5 text-white">
+      <a
+        href={waHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col items-center justify-center gap-0.5 bg-whatsapp py-2.5 text-white"
+      >
         <MessageCircle className="h-5 w-5" aria-hidden />
         <span className="text-xs font-semibold">WhatsApp</span>
       </a>
-      <a href="#book" className="flex flex-col items-center justify-center gap-0.5 bg-white py-2.5 text-primary">
+      <a
+        href="#book"
+        className="flex flex-col items-center justify-center gap-0.5 bg-white py-2.5 text-primary"
+      >
         <Calendar className="h-5 w-5" aria-hidden />
         <span className="text-xs font-semibold">Book</span>
       </a>

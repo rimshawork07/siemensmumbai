@@ -21,8 +21,12 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/areas/dadar", changefreq: "monthly", priority: "0.8" },
           { path: "/areas/powai", changefreq: "monthly", priority: "0.8" },
           { path: "/areas/mulund", changefreq: "monthly", priority: "0.8" },
-          
-          { path: "/guides/siemens-washing-machine-error-codes", changefreq: "monthly", priority: "0.7" },
+
+          {
+            path: "/guides/siemens-washing-machine-error-codes",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
           { path: "/privacy", changefreq: "yearly", priority: "0.3" },
           { path: "/terms", changefreq: "yearly", priority: "0.3" },
         ];
@@ -33,7 +37,9 @@ export const Route = createFileRoute("/sitemap.xml")({
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,
-          ].filter(Boolean).join("\n"),
+          ]
+            .filter(Boolean)
+            .join("\n"),
         );
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,

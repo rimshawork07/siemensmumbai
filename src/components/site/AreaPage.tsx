@@ -1,29 +1,57 @@
+/* eslint-disable react-refresh/only-export-components */
+
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "./Header";
 import { SiteFooter } from "./Footer";
 import { StickyMobileBar, FloatingWhatsApp } from "./ContactButtons";
 import {
-  Hero, Services, WhyChooseUs, WarrantySection, Testimonials,
-  ServiceArea, FAQ, BookingSection, Stats,
+  Hero,
+  Services,
+  WhyChooseUs,
+  WarrantySection,
+  Testimonials,
+  ServiceArea,
+  FAQ,
+  BookingSection,
+  Stats,
 } from "./Sections";
 
-export function AreaPage({ area, blurb, localCopy }: { area: string; blurb?: string; localCopy?: string }) {
+export function AreaPage({
+  area,
+  blurb,
+  localCopy,
+}: {
+  area: string;
+  blurb?: string;
+  localCopy?: string;
+}) {
   const heading = `Siemens Washing Machine Repair in ${area}`;
-  const sub = blurb ??
+  const sub =
+    blurb ??
     `Looking for a trusted Siemens washing machine repair service in ${area}? Our experienced technicians provide same-day washing machine repair across ${area} and nearby localities — with genuine spare parts and a 1+ year warranty on installed parts.`;
-  const local = localCopy ??
+  const local =
+    localCopy ??
     `We serve homes and apartments across ${area} with fast, reliable Siemens washing machine repair. From drum, bearing, and motor issues to drainage, spin, and electronic-board faults, our technicians diagnose and fix problems on the spot using genuine spare parts. Every repair carried out in ${area} is backed by a 1+ year warranty on installed parts.`;
   return (
     <>
       <SiteHeader />
       <main>
-        <nav aria-label="Breadcrumb" className="mx-auto max-w-6xl px-4 pt-4 text-xs text-muted-foreground">
+        <nav
+          aria-label="Breadcrumb"
+          className="mx-auto max-w-6xl px-4 pt-4 text-xs text-muted-foreground"
+        >
           <ol className="flex gap-1.5">
-            <li><Link to="/" className="hover:text-primary">Home</Link></li>
+            <li>
+              <Link to="/" className="hover:text-primary">
+                Home
+              </Link>
+            </li>
             <li>/</li>
             <li>Areas</li>
             <li>/</li>
-            <li aria-current="page" className="font-semibold text-foreground">{area}</li>
+            <li aria-current="page" className="font-semibold text-foreground">
+              {area}
+            </li>
           </ol>
         </nav>
         <Hero heading={heading} subheading={sub} />
@@ -34,7 +62,9 @@ export function AreaPage({ area, blurb, localCopy }: { area: string; blurb?: str
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">{local}</p>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            We repair front-load, top-load, semi and fully automatic Siemens washing machines — and service all other major brands. Book online, call, or WhatsApp us to arrange a same-day technician visit in {area}.
+            We repair front-load, top-load, semi and fully automatic Siemens washing machines — and
+            service all other major brands. Book online, call, or WhatsApp us to arrange a same-day
+            technician visit in {area}.
           </p>
         </section>
         <Services />

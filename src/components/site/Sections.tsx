@@ -1,7 +1,25 @@
 import {
-  Wrench, Sparkles, WashingMachine, Layers, ShieldCheck, Clock, BadgeCheck,
-  IndianRupee, Users, ThumbsUp, Award, Phone, Star, MapPin, CheckCircle2, Quote,
-  CalendarCheck, UserCheck, Search, Settings2,
+  Wrench,
+  Sparkles,
+  WashingMachine,
+  Layers,
+  ShieldCheck,
+  Clock,
+  BadgeCheck,
+  IndianRupee,
+  Users,
+  ThumbsUp,
+  Award,
+  Phone,
+  Star,
+  MapPin,
+  CheckCircle2,
+  Quote,
+  CalendarCheck,
+  UserCheck,
+  Search,
+  Settings2,
+  type LucideIcon,
 } from "lucide-react";
 import { SITE, AREA_GROUPS } from "@/lib/site";
 import { CallButton, WhatsAppButton, BookButton } from "./ContactButtons";
@@ -19,7 +37,7 @@ const techniciansInspectingImg = { url: assetUrl(techniciansInspectingPtr) };
 
 /* ---------------- HERO ---------------- */
 
-const HERO_BADGES: Array<[string, any]> = [
+const HERO_BADGES: Array<[string, LucideIcon]> = [
   ["4.9 Rated Service", Star],
   ["Same-Day Service Across Mumbai", Clock],
   ["Genuine Spare Parts", BadgeCheck],
@@ -37,7 +55,10 @@ export function Hero({ heading, subheading }: { heading?: string; subheading?: s
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/60 to-secondary/80" aria-hidden />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/60 to-secondary/80"
+        aria-hidden
+      />
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-24 md:py-28">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/25 backdrop-blur">
@@ -56,7 +77,10 @@ export function Hero({ heading, subheading }: { heading?: string; subheading?: s
           </div>
           <ul className="mt-6 grid max-w-lg grid-cols-2 gap-2 text-sm">
             {HERO_BADGES.map(([label, Icon]) => (
-              <li key={label} className="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2 text-white ring-1 ring-white/20 backdrop-blur">
+              <li
+                key={label}
+                className="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2 text-white ring-1 ring-white/20 backdrop-blur"
+              >
                 <Icon className="h-4 w-4 text-white" />
                 <span className="font-medium">{label}</span>
               </li>
@@ -87,14 +111,19 @@ export function Stats() {
     <section className="bg-navy text-white">
       <div className="mx-auto max-w-6xl px-4 py-10 sm:py-10 sm:py-14">
         <div className="text-center">
-          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Trusted by thousands across Mumbai</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
+            Trusted by thousands across Mumbai
+          </h2>
           <p className="mt-2 text-sm text-white/80 sm:text-base">
             Providing reliable washing machine repair services across Mumbai for over 5 years.
           </p>
         </div>
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {items.map(({ n, label, Icon }) => (
-            <div key={label} className="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10 backdrop-blur">
+            <div
+              key={label}
+              className="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10 backdrop-blur"
+            >
               <Icon className="mx-auto h-6 w-6 text-primary" />
               <p className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">{n}</p>
               <p className="mt-1 text-xs leading-snug text-white/80 sm:text-sm">{label}</p>
@@ -103,7 +132,10 @@ export function Stats() {
         </div>
         <ul className="mt-8 flex flex-wrap justify-center gap-2">
           {badges.map((b) => (
-            <li key={b} className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-white ring-1 ring-white/15 sm:text-sm">
+            <li
+              key={b}
+              className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-white ring-1 ring-white/15 sm:text-sm"
+            >
               <CheckCircle2 className="h-4 w-4 text-primary" /> {b}
             </li>
           ))}
@@ -122,7 +154,10 @@ export function IntroBlurb() {
   return (
     <section className="mx-auto max-w-3xl px-4 py-10 text-center">
       <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-        We are an established, independent washing machine repair company serving customers across Mumbai. Our experienced technicians specialize in Siemens front-load, top-load, and fully automatic washing machines — and repair all major brands. Fast response, transparent pricing, and warranty-backed parts.
+        We are an established, independent washing machine repair company serving customers across
+        Mumbai. Our experienced technicians specialize in Siemens front-load, top-load, and fully
+        automatic washing machines — and repair all major brands. Fast response, transparent
+        pricing, and warranty-backed parts.
       </p>
     </section>
   );
@@ -131,35 +166,62 @@ export function IntroBlurb() {
 /* ---------------- SERVICES ---------------- */
 
 const SERVICES = [
-  { title: "Washing Machine Repair", desc: "Diagnosis and repair for all washing machine issues.", Icon: Wrench },
-  { title: "Washing Machine Service", desc: "Preventive maintenance, deep cleaning, and tune-up service.", Icon: Sparkles },
-  { title: "Front Load Repair", desc: "Specialized repair for front-load machines including drum, bearing, and motor.", Icon: WashingMachine },
-  { title: "Top Load Repair", desc: "Complete repair solutions for top-load machines.", Icon: Layers },
+  {
+    title: "Washing Machine Repair",
+    desc: "Diagnosis and repair for all washing machine issues.",
+    Icon: Wrench,
+  },
+  {
+    title: "Washing Machine Service",
+    desc: "Preventive maintenance, deep cleaning, and tune-up service.",
+    Icon: Sparkles,
+  },
+  {
+    title: "Front Load Repair",
+    desc: "Specialized repair for front-load machines including drum, bearing, and motor.",
+    Icon: WashingMachine,
+  },
+  {
+    title: "Top Load Repair",
+    desc: "Complete repair solutions for top-load machines.",
+    Icon: Layers,
+  },
 ];
 
 export function Services() {
   return (
     <section id="services" className="mx-auto max-w-6xl px-4 py-10 sm:py-10">
       <div className="text-center">
-        <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Our Washing Machine Services</h2>
-        <p className="mt-2 text-muted-foreground">Siemens specialists — also servicing all major washing machine brands.</p>
+        <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+          Our Washing Machine Services
+        </h2>
+        <p className="mt-2 text-muted-foreground">
+          Siemens specialists — also servicing all major washing machine brands.
+        </p>
       </div>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map(({ title, desc, Icon }) => (
-          <article key={title} className="group flex flex-col rounded-2xl border border-border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+          <article
+            key={title}
+            className="group flex flex-col rounded-2xl border border-border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+          >
             <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary">
               <Icon className="h-6 w-6" />
             </div>
             <h3 className="mt-4 text-lg font-bold text-secondary">{title}</h3>
             <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
-            <a href={`tel:${SITE.phone}`} className="mt-4 inline-flex items-center gap-2 font-semibold text-primary">
+            <a
+              href={`tel:${SITE.phone}`}
+              className="mt-4 inline-flex items-center gap-2 font-semibold text-primary"
+            >
               <Phone className="h-4 w-4" /> Call Now
             </a>
           </article>
         ))}
       </div>
       <p className="mx-auto mt-8 max-w-3xl rounded-xl border border-border bg-white p-4 text-center text-sm text-muted-foreground shadow-sm">
-        We specialize in Siemens washing machine repairs and also provide repair services for all major washing machine brands.
+        We specialize in Siemens washing machine repairs and also provide repair services for all
+        major washing machine brands.
       </p>
     </section>
   );
@@ -169,10 +231,22 @@ export function Services() {
 
 export function WarrantySection() {
   const points = [
-    { t: "1+ Year Warranty on Installed Parts", d: "Every spare part installed by our technicians is covered by a warranty of one year or more." },
-    { t: "Genuine, Compatible Spare Parts", d: "We source only genuine and compatible parts to ensure your machine performs like new." },
-    { t: "Free Revisits Under Warranty", d: "If the same issue reoccurs within the warranty period, we return and fix it at no additional charge." },
-    { t: "Transparent Warranty Terms", d: "The warranty period is communicated upfront and printed on your service invoice." },
+    {
+      t: "1+ Year Warranty on Installed Parts",
+      d: "Every spare part installed by our technicians is covered by a warranty of one year or more.",
+    },
+    {
+      t: "Genuine, Compatible Spare Parts",
+      d: "We source only genuine and compatible parts to ensure your machine performs like new.",
+    },
+    {
+      t: "Free Revisits Under Warranty",
+      d: "If the same issue reoccurs within the warranty period, we return and fix it at no additional charge.",
+    },
+    {
+      t: "Transparent Warranty Terms",
+      d: "The warranty period is communicated upfront and printed on your service invoice.",
+    },
   ];
   return (
     <section id="warranty" className="bg-gradient-to-b from-white to-accent/40">
@@ -185,10 +259,13 @@ export function WarrantySection() {
             1+ Year Warranty on Every Spare Part We Install
           </h2>
           <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-            We stand behind every repair. Any spare part fitted by our technicians is covered under a warranty of at least one year, giving you complete peace of mind. If a covered part fails within the warranty period, we replace it — no questions asked, no extra charge.
+            We stand behind every repair. Any spare part fitted by our technicians is covered under
+            a warranty of at least one year, giving you complete peace of mind. If a covered part
+            fails within the warranty period, we replace it — no questions asked, no extra charge.
           </p>
           <p className="mt-3 text-xs text-muted-foreground">
-            *Warranty period may vary depending on the type of spare part installed. Full terms shared on your service invoice.
+            *Warranty period may vary depending on the type of spare part installed. Full terms
+            shared on your service invoice.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             <CallButton label="Talk to Us" />
@@ -218,12 +295,36 @@ export function WarrantySection() {
 /* ---------------- WHY US ---------------- */
 
 const WHY = [
-  { title: "Washing Machine Specialists", Icon: WashingMachine, desc: "We repair only washing machines — deep expertise, not generalists." },
-  { title: "Same-Day Service", Icon: Clock, desc: "Book today and get your washing machine running again with same-day service across Mumbai." },
-  { title: "Genuine Spare Parts", Icon: BadgeCheck, desc: "Only genuine, compatible parts used for lasting repairs." },
-  { title: "1+ Year Parts Warranty", Icon: ShieldCheck, desc: "Every spare part installed by us is warranty-backed for one year or more." },
-  { title: "Experienced Technicians", Icon: Award, desc: "Professionally trained technicians with years of Siemens repair experience." },
-  { title: "Transparent Pricing", Icon: IndianRupee, desc: "Upfront quote before any work begins. No hidden charges." },
+  {
+    title: "Washing Machine Specialists",
+    Icon: WashingMachine,
+    desc: "We repair only washing machines — deep expertise, not generalists.",
+  },
+  {
+    title: "Same-Day Service",
+    Icon: Clock,
+    desc: "Book today and get your washing machine running again with same-day service across Mumbai.",
+  },
+  {
+    title: "Genuine Spare Parts",
+    Icon: BadgeCheck,
+    desc: "Only genuine, compatible parts used for lasting repairs.",
+  },
+  {
+    title: "1+ Year Parts Warranty",
+    Icon: ShieldCheck,
+    desc: "Every spare part installed by us is warranty-backed for one year or more.",
+  },
+  {
+    title: "Experienced Technicians",
+    Icon: Award,
+    desc: "Professionally trained technicians with years of Siemens repair experience.",
+  },
+  {
+    title: "Transparent Pricing",
+    Icon: IndianRupee,
+    desc: "Upfront quote before any work begins. No hidden charges.",
+  },
 ];
 
 export function WhyChooseUs() {
@@ -231,8 +332,12 @@ export function WhyChooseUs() {
     <section className="bg-muted/40">
       <div className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
         <div className="text-center">
-          <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Why Choose Us</h2>
-          <p className="mt-2 text-muted-foreground">Trusted independent Siemens washing machine repair in Mumbai.</p>
+          <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+            Why Choose Us
+          </h2>
+          <p className="mt-2 text-muted-foreground">
+            Trusted independent Siemens washing machine repair in Mumbai.
+          </p>
         </div>
         <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start">
           <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-border">
@@ -264,10 +369,30 @@ export function WhyChooseUs() {
 /* ---------------- REPAIR PROCESS ---------------- */
 
 const PROCESS_STEPS = [
-  { n: "01", title: "Book Service", desc: "Call, WhatsApp, or fill the booking form to schedule your repair.", Icon: CalendarCheck },
-  { n: "02", title: "Technician Visit", desc: "A trained technician arrives at your home at the selected time slot.", Icon: UserCheck },
-  { n: "03", title: "Diagnosis", desc: "Complete inspection with an upfront, transparent quote before any work.", Icon: Search },
-  { n: "04", title: "Repair & Testing", desc: "Genuine spare parts installed, followed by full testing and warranty.", Icon: Settings2 },
+  {
+    n: "01",
+    title: "Book Service",
+    desc: "Call, WhatsApp, or fill the booking form to schedule your repair.",
+    Icon: CalendarCheck,
+  },
+  {
+    n: "02",
+    title: "Technician Visit",
+    desc: "A trained technician arrives at your home at the selected time slot.",
+    Icon: UserCheck,
+  },
+  {
+    n: "03",
+    title: "Diagnosis",
+    desc: "Complete inspection with an upfront, transparent quote before any work.",
+    Icon: Search,
+  },
+  {
+    n: "04",
+    title: "Repair & Testing",
+    desc: "Genuine spare parts installed, followed by full testing and warranty.",
+    Icon: Settings2,
+  },
 ];
 
 export function RepairProcess() {
@@ -278,8 +403,12 @@ export function RepairProcess() {
           <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
             <Wrench className="h-3.5 w-3.5" /> Our Repair Process
           </span>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Simple, Transparent & Professional</h2>
-          <p className="mt-2 text-muted-foreground">From booking to repair — four clear steps, no surprises.</p>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+            Simple, Transparent & Professional
+          </h2>
+          <p className="mt-2 text-muted-foreground">
+            From booking to repair — four clear steps, no surprises.
+          </p>
         </div>
         <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] lg:items-center">
           <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-border">
@@ -342,11 +471,15 @@ export function CustomerTrust() {
               Repairs You Can Depend On
             </h2>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              Backed by years of hands-on Siemens expertise, our technicians deliver reliable, warranty-protected repairs — with clear communication at every step.
+              Backed by years of hands-on Siemens expertise, our technicians deliver reliable,
+              warranty-protected repairs — with clear communication at every step.
             </p>
             <ul className="mt-5 grid gap-2 sm:grid-cols-2">
               {TRUST_INDICATORS.map((t) => (
-                <li key={t} className="flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-secondary shadow-sm ring-1 ring-border">
+                <li
+                  key={t}
+                  className="flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-secondary shadow-sm ring-1 ring-border"
+                >
                   <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" /> {t}
                 </li>
               ))}
@@ -391,26 +524,35 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="mx-auto max-w-6xl px-4 py-10 sm:py-10">
       <div className="text-center">
-        <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">What our customers say</h2>
+        <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+          What our customers say
+        </h2>
         <p className="mt-2 text-muted-foreground">Real feedback from customers across Mumbai.</p>
       </div>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {TESTIMONIALS.map((t) => (
-          <figure key={t.name} className="relative rounded-2xl border border-border bg-white p-6 shadow-sm">
+          <figure
+            key={t.name}
+            className="relative rounded-2xl border border-border bg-white p-6 shadow-sm"
+          >
             <Quote className="absolute right-5 top-5 h-8 w-8 text-primary/15" />
             <div className="flex gap-0.5 text-primary" aria-label="5 out of 5 stars">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-4 w-4 fill-current" />
               ))}
             </div>
-            <blockquote className="mt-3 text-sm leading-relaxed text-foreground">"{t.text}"</blockquote>
+            <blockquote className="mt-3 text-sm leading-relaxed text-foreground">
+              "{t.text}"
+            </blockquote>
             <figcaption className="mt-4 flex items-center gap-3">
               <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/10 font-bold text-primary">
                 {t.name.charAt(0)}
               </div>
               <div>
                 <p className="text-sm font-bold text-secondary">{t.name}</p>
-                <p className="flex items-center gap-1 text-xs text-muted-foreground"><MapPin className="h-3 w-3" /> {t.area}, Mumbai</p>
+                <p className="flex items-center gap-1 text-xs text-muted-foreground">
+                  <MapPin className="h-3 w-3" /> {t.area}, Mumbai
+                </p>
               </div>
             </figcaption>
           </figure>
@@ -439,9 +581,12 @@ export function ServiceArea() {
           <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
             <MapPin className="h-3.5 w-3.5" /> Service Coverage
           </span>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Serving All Areas Across Mumbai</h2>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+            Serving All Areas Across Mumbai
+          </h2>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">
-            We provide washing machine repair services throughout Mumbai city and its suburbs, with professionally trained technicians available across major localities.
+            We provide washing machine repair services throughout Mumbai city and its suburbs, with
+            professionally trained technicians available across major localities.
           </p>
         </div>
 
@@ -456,7 +601,10 @@ export function ServiceArea() {
               </div>
               <ul className="mt-3 flex flex-wrap gap-1.5">
                 {localities.map((l) => (
-                  <li key={l} className="rounded-full bg-accent/60 px-2.5 py-1 text-xs font-medium text-secondary">
+                  <li
+                    key={l}
+                    className="rounded-full bg-accent/60 px-2.5 py-1 text-xs font-medium text-secondary"
+                  >
                     {l}
                   </li>
                 ))}
@@ -466,14 +614,21 @@ export function ServiceArea() {
         </div>
 
         <p className="mx-auto mt-6 max-w-3xl rounded-xl border border-primary/20 bg-white p-4 text-center text-sm font-medium text-secondary shadow-sm">
-          Our professionally trained technicians are available across major localities throughout Mumbai, helping us provide fast and reliable washing machine repair services.
+          Our professionally trained technicians are available across major localities throughout
+          Mumbai, helping us provide fast and reliable washing machine repair services.
         </p>
 
         <div className="mt-6">
-          <p className="text-center text-xs font-semibold uppercase tracking-wide text-muted-foreground">Popular localities</p>
+          <p className="text-center text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Popular localities
+          </p>
           <div className="mt-3 flex flex-wrap justify-center gap-2">
             {AREA_HIGHLIGHTS.map((a) => (
-              <a key={a.slug} href={`/areas/${a.slug}`} className="rounded-full border border-border bg-white px-3.5 py-1.5 text-sm font-medium text-secondary shadow-sm transition hover:border-primary hover:text-primary">
+              <a
+                key={a.slug}
+                href={`/areas/${a.slug}`}
+                className="rounded-full border border-border bg-white px-3.5 py-1.5 text-sm font-medium text-secondary shadow-sm transition hover:border-primary hover:text-primary"
+              >
                 {a.name}
               </a>
             ))}
@@ -484,16 +639,33 @@ export function ServiceArea() {
   );
 }
 
-
 /* ---------------- FAQ ---------------- */
 
 const FAQS = [
-  { q: "How quickly can you repair my washing machine?", a: "We offer same-day service across most areas of Mumbai. Book by phone or WhatsApp and our technician typically arrives within a few hours." },
-  { q: "Do you provide warranty on repairs?", a: "Yes. We provide a warranty of one year or more on every spare part installed by us. The exact period depends on the type of part and is confirmed on your service invoice." },
-  { q: "Do you repair front-load and top-load washing machines?", a: "Yes, we specialize in front-load, top-load, semi and fully automatic Siemens washing machines and also service all other major brands." },
-  { q: "Do you use genuine spare parts?", a: "Yes. We only use genuine and compatible spare parts to ensure lasting repairs." },
-  { q: "Which areas of Mumbai do you cover?", a: "We serve South Mumbai, Central Mumbai, Western Mumbai, and Eastern Mumbai (Powai, Bhandup, Mulund) — including Colaba, Worli, Lower Parel, Dadar, Mahim, Matunga, Chembur, Kurla, Ghatkopar, Bandra, Andheri, Goregaon, Powai and more." },
-  { q: "How much does a washing machine repair cost?", a: "The final price depends on the issue and any parts required. Our technician provides an upfront, transparent quote before any work begins — you approve the price before we proceed." },
+  {
+    q: "How quickly can you repair my washing machine?",
+    a: "We offer same-day service across most areas of Mumbai. Book by phone or WhatsApp and our technician typically arrives within a few hours.",
+  },
+  {
+    q: "Do you provide warranty on repairs?",
+    a: "Yes. We provide a warranty of one year or more on every spare part installed by us. The exact period depends on the type of part and is confirmed on your service invoice.",
+  },
+  {
+    q: "Do you repair front-load and top-load washing machines?",
+    a: "Yes, we specialize in front-load, top-load, semi and fully automatic Siemens washing machines and also service all other major brands.",
+  },
+  {
+    q: "Do you use genuine spare parts?",
+    a: "Yes. We only use genuine and compatible spare parts to ensure lasting repairs.",
+  },
+  {
+    q: "Which areas of Mumbai do you cover?",
+    a: "We serve South Mumbai, Central Mumbai, Western Mumbai, and Eastern Mumbai (Powai, Bhandup, Mulund) — including Colaba, Worli, Lower Parel, Dadar, Mahim, Matunga, Chembur, Kurla, Ghatkopar, Bandra, Andheri, Goregaon, Powai and more.",
+  },
+  {
+    q: "How much does a washing machine repair cost?",
+    a: "The final price depends on the issue and any parts required. Our technician provides an upfront, transparent quote before any work begins — you approve the price before we proceed.",
+  },
 ];
 
 export function FAQ() {
@@ -501,27 +673,41 @@ export function FAQ() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: FAQS.map(({ q, a }) => ({
-      "@type": "Question", name: q,
+      "@type": "Question",
+      name: q,
       acceptedAnswer: { "@type": "Answer", text: a },
     })),
   };
   return (
     <section id="faq" className="mx-auto max-w-3xl px-4 py-10 sm:py-10">
-      <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Frequently Asked Questions</h2>
+      <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+        Frequently Asked Questions
+      </h2>
       <div className="mt-6 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
         {FAQS.map(({ q, a }) => (
           <details key={q} className="group px-5 py-4">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-secondary">
               {q}
               <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary/10 text-primary transition group-open:rotate-45">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 5v14M5 12h14" strokeLinecap="round"/></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path d="M12 5v14M5 12h14" strokeLinecap="round" />
+                </svg>
               </span>
             </summary>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a}</p>
           </details>
         ))}
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </section>
   );
 }
@@ -531,9 +717,14 @@ export function FAQ() {
 export function About() {
   return (
     <section className="mx-auto max-w-3xl px-4 py-10 text-center">
-      <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">About Us</h2>
+      <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+        About Us
+      </h2>
       <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-        We are an independent washing machine repair company in Mumbai with over five years of on-ground experience. We specialize in Siemens washing machines and provide repair, maintenance, and spare-part replacement services for all major brands across Mumbai and its suburbs.
+        We are an independent washing machine repair company in Mumbai with over five years of
+        on-ground experience. We specialize in Siemens washing machines and provide repair,
+        maintenance, and spare-part replacement services for all major brands across Mumbai and its
+        suburbs.
       </p>
     </section>
   );
@@ -549,15 +740,26 @@ export function BookingSection({ areaHint }: { areaHint?: string }) {
           <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
             <Calendar className="h-3.5 w-3.5" /> Book Online
           </span>
-          <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">Book Your Washing Machine Service</h2>
+          <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+            Book Your Washing Machine Service
+          </h2>
           <p className="mt-3 text-muted-foreground">
-            Fill the form and our team will call you back to confirm a same-day slot{areaHint ? ` in ${areaHint}` : ""}.
+            Fill the form and our team will call you back to confirm a same-day slot
+            {areaHint ? ` in ${areaHint}` : ""}.
           </p>
           <div className="mt-6 grid gap-2 text-sm text-secondary">
-            <p className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Same-day service across Mumbai</p>
-            <p className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> 1+ year warranty on installed parts*</p>
-            <p className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Upfront transparent pricing</p>
-            <p className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Experienced technicians</p>
+            <p className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary" /> Same-day service across Mumbai
+            </p>
+            <p className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary" /> 1+ year warranty on installed parts*
+            </p>
+            <p className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary" /> Upfront transparent pricing
+            </p>
+            <p className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary" /> Experienced technicians
+            </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
             <CallButton />

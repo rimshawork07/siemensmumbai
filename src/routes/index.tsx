@@ -3,19 +3,35 @@ import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
 import { StickyMobileBar, FloatingWhatsApp } from "@/components/site/ContactButtons";
 import {
-  Hero, IntroBlurb, Stats, Services, WhyChooseUs, WarrantySection,
-  Testimonials, ServiceArea, FAQ, About, BookingSection, RepairProcess, CustomerTrust,
+  Hero,
+  IntroBlurb,
+  Stats,
+  Services,
+  WhyChooseUs,
+  WarrantySection,
+  Testimonials,
+  ServiceArea,
+  FAQ,
+  About,
+  BookingSection,
+  RepairProcess,
+  CustomerTrust,
 } from "@/components/site/Sections";
 
 const title = "Siemens Washing Machine Repair Mumbai | Same-Day";
-const description = "Same-day Siemens washing machine repair across Mumbai. Genuine spare parts, experienced technicians, 1+ year warranty. Call +91 98338 75771.";
+const description =
+  "Same-day Siemens washing machine repair across Mumbai. Genuine spare parts, experienced technicians, 1+ year warranty. Call +91 98338 75771.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title },
       { name: "description", content: description },
-      { name: "keywords", content: "Siemens Washing Machine Repair Mumbai, Washing Machine Repair Mumbai, Same Day Washing Machine Repair Mumbai, Front Load Washing Machine Repair Mumbai, Top Load Washing Machine Repair Mumbai, Fully Automatic Washing Machine Repair Mumbai, Washing Machine Service Near Me, Bosch Washing Machine Repair Mumbai" },
+      {
+        name: "keywords",
+        content:
+          "Siemens Washing Machine Repair Mumbai, Washing Machine Repair Mumbai, Same Day Washing Machine Repair Mumbai, Front Load Washing Machine Repair Mumbai, Top Load Washing Machine Repair Mumbai, Fully Automatic Washing Machine Repair Mumbai, Washing Machine Service Near Me, Bosch Washing Machine Repair Mumbai",
+      },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:url", content: "https://siemensmumbai.lovable.app/" },

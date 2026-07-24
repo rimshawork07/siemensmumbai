@@ -39,9 +39,9 @@
   --muted-foreground: oklch(0.48 0.02 250);
   --primary: oklch(0.55 0.11 190); /* Siemens teal-green */
   --primary-foreground: oklch(1 0 0);
-  --primary-dark: oklch(0.42 0.10 190);
+  --primary-dark: oklch(0.42 0.1 190);
   --accent: oklch(0.95 0.03 190);
-  --accent-foreground: oklch(0.35 0.10 190);
+  --accent-foreground: oklch(0.35 0.1 190);
   --navy: oklch(0.19 0.04 260);
   --secondary: oklch(0.19 0.04 260); /* dark navy */
   --secondary-foreground: oklch(1 0 0);
@@ -51,13 +51,22 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 { text-wrap: balance; letter-spacing: -0.01em; }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
 }
