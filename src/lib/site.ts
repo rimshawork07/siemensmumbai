@@ -3,7 +3,7 @@ export const SITE = {
   phoneDisplay: "+91 98338 75771",
   whatsapp: "919833875771", // wa.me format
   whatsappMessage: "Hello, I would like to book a washing machine repair service.",
-  notificationEmail: process.env.NOTIFICATION_EMAIL ?? "rimsha.work07@gmail.com",
+  notificationEmail: process.env.NOTIFICATION_EMAIL || "rimsha.work07@gmail.com",
   brand: "Siemens Washing Machine Repair Mumbai",
   longBrand: "Siemens Washing Machine Repair Specialists in Mumbai",
 };
