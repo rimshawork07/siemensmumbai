@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { initGA, trackPageView } from "../lib/analytics";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -111,6 +112,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  // Initialize GA4 once
+  useEffect(() => {
+    initGA();
+    // Track initial page view
+    trackPageView(window.location.pathname + window.location.search);
+  }, []);
+
+  // Track page views on client‑side navigation
+  const router = useRouter();
+  useEffect(() => {
+    const unsubscribe = router.subscribe(() => {
+      trackPageView(window.location.pathname + window.location.search);
+    });
+    return () => unsubscribe();
+  }, [router]);
+
   return (
     <html lang="en">
       <head>
