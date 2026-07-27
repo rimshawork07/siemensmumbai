@@ -24,16 +24,25 @@ import {
 import { SITE, AREA_GROUPS } from "@/lib/site";
 import { CallButton, WhatsAppButton, BookButton } from "./ContactButtons";
 import { BookingForm } from "./BookingForm";
-import heroImgPtr from "@/assets/hero-siemens.png.asset.json";
-import technicianBlueCapPtr from "@/assets/technician-bluecap.png.asset.json";
-import technicianToolboxPtr from "@/assets/technician-toolbox.png.asset.json";
-import techniciansInspectingPtr from "@/assets/technicians-inspecting.png.asset.json";
+// import heroImgPtr from "@/assets/hero-siemens.png.asset.json";
+const heroImgPtr = "/images/hero-siemens.png";
+const technicianBlueCapPtr = "/images/technician-bluecap.png";
+const technicianToolboxPtr = "/images/technician-toolbox.png";
+const techniciansInspectingPtr = "/images/technicians-inspecting.png";
+// import technicianBlueCapPtr from "@/assets/technician-bluecap.png.asset.json";
+// import technicianToolboxPtr from "@/assets/technician-toolbox.png.asset.json";
+// import techniciansInspectingPtr from "@/assets/technicians-inspecting.png.asset.json";
 import { assetUrl } from "@/lib/asset-url";
 
-const heroImg = { url: assetUrl(heroImgPtr) };
-const technicianBlueCapImg = { url: assetUrl(technicianBlueCapPtr) };
-const technicianToolboxImg = { url: assetUrl(technicianToolboxPtr) };
-const techniciansInspectingImg = { url: assetUrl(techniciansInspectingPtr) };
+// const heroImg = { url: assetUrl(heroImgPtr) };
+// const technicianBlueCapImg = { url: assetUrl(technicianBlueCapPtr) };
+// const technicianToolboxImg = { url: assetUrl(technicianToolboxPtr) };
+// const techniciansInspectingImg = { url: assetUrl(techniciansInspectingPtr) };
+
+const heroImg = { url: heroImgPtr };
+const technicianBlueCapImg = { url: technicianBlueCapPtr };
+const technicianToolboxImg = { url: technicianToolboxPtr };
+const techniciansInspectingImg = { url: techniciansInspectingPtr };
 
 /* ---------------- HERO ---------------- */
 
