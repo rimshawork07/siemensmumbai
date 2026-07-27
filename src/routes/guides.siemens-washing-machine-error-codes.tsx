@@ -9,7 +9,7 @@ const title = "Siemens Washing Machine Error Codes | Mumbai Repair Guide";
 const description =
   "Common Siemens washing machine error codes (E18, F16, F21, F23, F43 and more) — what each code means and when to call a technician.";
 const path = "/guides/siemens-washing-machine-error-codes";
-const url = `https://siemensmumbai.lovable.app${path}`;
+const url = `https://siemensmumbai.in${path}`;
 
 const CODES: { code: string; meaning: string; action: string }[] = [
   {
@@ -94,12 +94,12 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://siemensmumbai.lovable.app/" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://siemensmumbai.in/" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Guides",
-      item: "https://siemensmumbai.lovable.app/guides",
+      item: "https://siemensmumbai.in/guides",
     },
     { "@type": "ListItem", position: 3, name: "Siemens error codes", item: url },
   ],

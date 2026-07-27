@@ -3,7 +3,7 @@
 // relative paths 404 because that infrastructure lives only on *.lovable.app.
 // Always resolve asset URLs against the Lovable published domain so images
 // load correctly regardless of where the site is deployed.
-const LOVABLE_ASSET_BASE = "https://siemensmumbai.lovable.app";
+const LOVABLE_ASSET_BASE = "https://siemensmumbai.in";
 
 export function assetUrl(pointer: { url: string }): string {
   const u = pointer.url;
