@@ -739,7 +739,27 @@ export function About() {
   );
 }
 
-/* ---------------- BOOKING ---------------- */
+/* ---------------- INDEPENDENCE DISCLOSURE BANNER ---------------- */
+/* Surfaces the "not affiliated with Siemens" disclosure above the fold —
+   placed under the Hero on the homepage and area pages, rather than only
+   in the footer. Strengthens the independent-business positioning that
+   both Google's trademark policy and third-party tech-support policy
+   reward, and reduces confusion-based complaint risk. */
+
+export function IndependenceBanner() {
+  return (
+    <div className="mx-auto max-w-3xl px-4">
+      <div className="mx-auto -mt-px flex items-start gap-2.5 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5 text-xs leading-relaxed text-secondary sm:text-sm">
+        <ShieldCheck className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+        <span>
+          We are an <strong>independent repair service</strong> and are not affiliated with,
+          authorized by, or an official service center of Siemens. We service Siemens and other
+          major washing machine brands.
+        </span>
+      </div>
+    </div>
+  );
+}
 
 export function BookingSection({ areaHint }: { areaHint?: string }) {
   return (

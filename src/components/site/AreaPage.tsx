@@ -6,6 +6,7 @@ import { SiteFooter } from "./Footer";
 import { StickyMobileBar, FloatingWhatsApp } from "./ContactButtons";
 import {
   Hero,
+  IndependenceBanner,
   Services,
   WhyChooseUs,
   WarrantySection,
@@ -55,6 +56,7 @@ export function AreaPage({
           </ol>
         </nav>
         <Hero heading={heading} subheading={sub} />
+        <IndependenceBanner />
         <Stats />
         <section className="mx-auto max-w-3xl px-4 py-12">
           <h2 className="text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">

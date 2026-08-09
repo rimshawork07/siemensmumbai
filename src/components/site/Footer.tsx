@@ -63,8 +63,15 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="text-sm font-bold uppercase tracking-wide text-muted-foreground">Legal</h4>
+          <h4 className="text-sm font-bold uppercase tracking-wide text-muted-foreground">
+            Company &amp; Legal
+          </h4>
           <ul className="mt-3 space-y-1 text-sm">
+            <li>
+              <Link to="/about" className="hover:text-primary">
+                About Us
+              </Link>
+            </li>
             <li>
               <Link to="/privacy" className="hover:text-primary">
                 Privacy Policy
@@ -73,6 +80,11 @@ export function SiteFooter() {
             <li>
               <Link to="/terms" className="hover:text-primary">
                 Terms &amp; Conditions
+              </Link>
+            </li>
+            <li>
+              <Link to="/refund-policy" className="hover:text-primary">
+                Refund &amp; Cancellation
               </Link>
             </li>
           </ul>

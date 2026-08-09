@@ -4,6 +4,9 @@ export const SITE = {
   whatsapp: "919833875771", // wa.me format
   whatsappMessage: "Hello, I would like to book a washing machine repair service.",
   notificationEmail: process.env.NOTIFICATION_EMAIL || "rimsha.work07@gmail.com",
+  // TODO: replace with a real business-domain inbox (e.g. contact@siemensmumbai.in)
+  // before launching ads — shown publicly on Privacy Policy, Refund Policy, About.
+  publicContactEmail: "rimsha.work07@gmail.com",
   brand: "Siemens Washing Machine Repair Mumbai",
   longBrand: "Siemens Washing Machine Repair Specialists in Mumbai",
 };

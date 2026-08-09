@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site/Footer";
 import { StickyMobileBar, FloatingWhatsApp } from "@/components/site/ContactButtons";
 import {
   Hero,
+  IndependenceBanner,
   IntroBlurb,
   Stats,
   Services,
@@ -54,6 +55,7 @@ function Index() {
           heading="Siemens Washing Machine Repair Specialists in Mumbai"
           subheading="Trusted, professional washing machine repair across Mumbai — carried out by experienced, background-verified technicians with same-day service and genuine spare parts."
         />
+        <IndependenceBanner />
         <Stats />
         <IntroBlurb />
         <Services />
