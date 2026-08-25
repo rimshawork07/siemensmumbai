@@ -19,7 +19,7 @@ import {
   CustomerTrust,
 } from "@/components/site/Sections";
 
-const title = "Siemens Washing Machine Repair Mumbai | Same-Day";
+const title = "SIEMENS Service Centre in Mumbai- Siemens Mumbai";
 const description =
   "Same-day Siemens washing machine repair across Mumbai. Genuine spare parts, experienced technicians, 1+ year warranty. Call +91 98338 75771.";
 
