@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AreaPage, areaHead } from "@/components/site/AreaPage";
+import { AREA_PAGES } from "@/lib/site";
+
+const area = AREA_PAGES.find((a) => a.slug === "mulund")!;
 
 export const Route = createFileRoute("/areas/mulund")({
-  head: () => areaHead("Mulund", "mulund"),
-  component: () => (
-    <AreaPage
-      area="Mulund"
-      localCopy="Trusted Siemens washing machine repair across Mulund — including Mulund West, Mulund East, Nahur, and surrounding residential neighbourhoods. Our experienced technicians offer same-day service, transparent pricing, and warranty-backed parts."
-    />
-  ),
+  head: () => areaHead(area.name, area.slug, area.line),
+  component: () => <AreaPage area={area.name} line={area.line} landmark={area.landmark} />,
 });

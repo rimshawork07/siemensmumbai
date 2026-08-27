@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
 import { StickyMobileBar } from "@/components/site/ContactButtons";
-import { SITE } from "@/lib/site";
+import { SITE, BASE_URL, DEFAULT_OG_IMAGE } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -14,9 +14,10 @@ export const Route = createFileRoute("/about")({
           "About our independent Siemens washing machine repair service in Mumbai — who we are, what we do, and where we operate.",
       },
       { property: "og:title", content: "About Us" },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: `${BASE_URL}/about` },
+      { property: "og:image", content: DEFAULT_OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: `${BASE_URL}/about` }],
   }),
   component: AboutPage,
 });

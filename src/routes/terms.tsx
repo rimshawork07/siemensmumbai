@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
 import { StickyMobileBar } from "@/components/site/ContactButtons";
+import { BASE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -13,9 +14,10 @@ export const Route = createFileRoute("/terms")({
           "Terms and conditions for our independent Siemens washing machine repair service in Mumbai.",
       },
       { property: "og:title", content: "Terms & Conditions" },
-      { property: "og:url", content: "/terms" },
+      { property: "og:url", content: `${BASE_URL}/terms` },
+      { name: "robots", content: "noindex, follow" },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: `${BASE_URL}/terms` }],
   }),
   component: TermsPage,
 });

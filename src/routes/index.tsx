@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
 import { StickyMobileBar, FloatingWhatsApp } from "@/components/site/ContactButtons";
+import { DEFAULT_OG_IMAGE } from "@/lib/site";
 import {
   Hero,
   IndependenceBanner,
@@ -17,6 +18,7 @@ import {
   BookingSection,
   RepairProcess,
   CustomerTrust,
+  BrandsWeRepair,
 } from "@/components/site/Sections";
 
 const title = "SIEMENS Service Centre in Mumbai- Siemens Mumbai";
@@ -31,15 +33,17 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "Siemens Washing Machine Repair Mumbai, Washing Machine Repair Mumbai, Same Day Washing Machine Repair Mumbai, Front Load Washing Machine Repair Mumbai, Top Load Washing Machine Repair Mumbai, Fully Automatic Washing Machine Repair Mumbai, Washing Machine Service Near Me, Bosch Washing Machine Repair Mumbai",
+          "Siemens Washing Machine Repair Mumbai, Washing Machine Repair Mumbai, Washing Machine Repair Services Mumbai, Same Day Washing Machine Repair Mumbai, Front Load Washing Machine Repair Mumbai, Top Load Washing Machine Repair Mumbai, Fully Automatic Washing Machine Repair Mumbai, Washing Machine Service Near Me, Bosch Washing Machine Repair Mumbai, Samsung Washing Machine Repair Mumbai, LG Washing Machine Repair Mumbai, IFB Washing Machine Repair Mumbai, Whirlpool Washing Machine Repair Mumbai, Washing Machine Repair Western Line Mumbai, Washing Machine Repair Central Line Mumbai, Washing Machine Repair Harbour Line Mumbai",
       },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:url", content: "https://siemensmumbai.in/" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: DEFAULT_OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: "https://siemensmumbai.in/" }],
   }),
@@ -59,6 +63,7 @@ function Index() {
         <Stats />
         <IntroBlurb />
         <Services />
+        <BrandsWeRepair />
         <RepairProcess />
         <BookingSection />
         <WarrantySection />

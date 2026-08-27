@@ -17,10 +17,33 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AreasAndheriRouteImport } from './routes/areas.andheri'
 import { Route as AreasBandraRouteImport } from './routes/areas.bandra'
+import { Route as AreasBhandupRouteImport } from './routes/areas.bhandup'
+import { Route as AreasBorivaliRouteImport } from './routes/areas.borivali'
+import { Route as AreasBycullaRouteImport } from './routes/areas.byculla'
+import { Route as AreasChemburRouteImport } from './routes/areas.chembur'
+import { Route as AreasChurchgateRouteImport } from './routes/areas.churchgate'
 import { Route as AreasDadarRouteImport } from './routes/areas.dadar'
+import { Route as AreasGhatkoparRouteImport } from './routes/areas.ghatkopar'
+import { Route as AreasGoregaonRouteImport } from './routes/areas.goregaon'
+import { Route as AreasJogeshwariRouteImport } from './routes/areas.jogeshwari'
+import { Route as AreasKandivaliRouteImport } from './routes/areas.kandivali'
+import { Route as AreasKanjurmargRouteImport } from './routes/areas.kanjurmarg'
+import { Route as AreasKurlaRouteImport } from './routes/areas.kurla'
 import { Route as AreasMahimRouteImport } from './routes/areas.mahim'
+import { Route as AreasMaladRouteImport } from './routes/areas.malad'
+import { Route as AreasMatungaRouteImport } from './routes/areas.matunga'
 import { Route as AreasMulundRouteImport } from './routes/areas.mulund'
 import { Route as AreasPowaiRouteImport } from './routes/areas.powai'
+import { Route as AreasSantacruzRouteImport } from './routes/areas.santacruz'
+import { Route as AreasSewriRouteImport } from './routes/areas.sewri'
+import { Route as AreasSionRouteImport } from './routes/areas.sion'
+import { Route as AreasVikhroliRouteImport } from './routes/areas.vikhroli'
+import { Route as AreasVileParleRouteImport } from './routes/areas.vile-parle'
+import { Route as AreasWadalaRouteImport } from './routes/areas.wadala'
+import { Route as BrandsBoschWashingMachineRepairMumbaiRouteImport } from './routes/brands.bosch-washing-machine-repair-mumbai'
+import { Route as BrandsIfbWashingMachineRepairMumbaiRouteImport } from './routes/brands.ifb-washing-machine-repair-mumbai'
+import { Route as BrandsLgWashingMachineRepairMumbaiRouteImport } from './routes/brands.lg-washing-machine-repair-mumbai'
+import { Route as BrandsSamsungWashingMachineRepairMumbaiRouteImport } from './routes/brands.samsung-washing-machine-repair-mumbai'
 import { Route as GuidesSiemensWashingMachineErrorCodesRouteImport } from './routes/guides.siemens-washing-machine-error-codes'
 
 const IndexRoute = IndexRouteImport.update({
@@ -63,14 +86,79 @@ const AreasBandraRoute = AreasBandraRouteImport.update({
   path: '/areas/bandra',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AreasBhandupRoute = AreasBhandupRouteImport.update({
+  id: '/areas/bhandup',
+  path: '/areas/bhandup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasBorivaliRoute = AreasBorivaliRouteImport.update({
+  id: '/areas/borivali',
+  path: '/areas/borivali',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasBycullaRoute = AreasBycullaRouteImport.update({
+  id: '/areas/byculla',
+  path: '/areas/byculla',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasChemburRoute = AreasChemburRouteImport.update({
+  id: '/areas/chembur',
+  path: '/areas/chembur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasChurchgateRoute = AreasChurchgateRouteImport.update({
+  id: '/areas/churchgate',
+  path: '/areas/churchgate',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AreasDadarRoute = AreasDadarRouteImport.update({
   id: '/areas/dadar',
   path: '/areas/dadar',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AreasGhatkoparRoute = AreasGhatkoparRouteImport.update({
+  id: '/areas/ghatkopar',
+  path: '/areas/ghatkopar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasGoregaonRoute = AreasGoregaonRouteImport.update({
+  id: '/areas/goregaon',
+  path: '/areas/goregaon',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasJogeshwariRoute = AreasJogeshwariRouteImport.update({
+  id: '/areas/jogeshwari',
+  path: '/areas/jogeshwari',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasKandivaliRoute = AreasKandivaliRouteImport.update({
+  id: '/areas/kandivali',
+  path: '/areas/kandivali',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasKanjurmargRoute = AreasKanjurmargRouteImport.update({
+  id: '/areas/kanjurmarg',
+  path: '/areas/kanjurmarg',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasKurlaRoute = AreasKurlaRouteImport.update({
+  id: '/areas/kurla',
+  path: '/areas/kurla',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AreasMahimRoute = AreasMahimRouteImport.update({
   id: '/areas/mahim',
   path: '/areas/mahim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasMaladRoute = AreasMaladRouteImport.update({
+  id: '/areas/malad',
+  path: '/areas/malad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasMatungaRoute = AreasMatungaRouteImport.update({
+  id: '/areas/matunga',
+  path: '/areas/matunga',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AreasMulundRoute = AreasMulundRouteImport.update({
@@ -83,6 +171,60 @@ const AreasPowaiRoute = AreasPowaiRouteImport.update({
   path: '/areas/powai',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AreasSantacruzRoute = AreasSantacruzRouteImport.update({
+  id: '/areas/santacruz',
+  path: '/areas/santacruz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasSewriRoute = AreasSewriRouteImport.update({
+  id: '/areas/sewri',
+  path: '/areas/sewri',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasSionRoute = AreasSionRouteImport.update({
+  id: '/areas/sion',
+  path: '/areas/sion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasVikhroliRoute = AreasVikhroliRouteImport.update({
+  id: '/areas/vikhroli',
+  path: '/areas/vikhroli',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasVileParleRoute = AreasVileParleRouteImport.update({
+  id: '/areas/vile-parle',
+  path: '/areas/vile-parle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasWadalaRoute = AreasWadalaRouteImport.update({
+  id: '/areas/wadala',
+  path: '/areas/wadala',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandsBoschWashingMachineRepairMumbaiRoute =
+  BrandsBoschWashingMachineRepairMumbaiRouteImport.update({
+    id: '/brands/bosch-washing-machine-repair-mumbai',
+    path: '/brands/bosch-washing-machine-repair-mumbai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BrandsIfbWashingMachineRepairMumbaiRoute =
+  BrandsIfbWashingMachineRepairMumbaiRouteImport.update({
+    id: '/brands/ifb-washing-machine-repair-mumbai',
+    path: '/brands/ifb-washing-machine-repair-mumbai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BrandsLgWashingMachineRepairMumbaiRoute =
+  BrandsLgWashingMachineRepairMumbaiRouteImport.update({
+    id: '/brands/lg-washing-machine-repair-mumbai',
+    path: '/brands/lg-washing-machine-repair-mumbai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BrandsSamsungWashingMachineRepairMumbaiRoute =
+  BrandsSamsungWashingMachineRepairMumbaiRouteImport.update({
+    id: '/brands/samsung-washing-machine-repair-mumbai',
+    path: '/brands/samsung-washing-machine-repair-mumbai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const GuidesSiemensWashingMachineErrorCodesRoute =
   GuidesSiemensWashingMachineErrorCodesRouteImport.update({
     id: '/guides/siemens-washing-machine-error-codes',
@@ -99,10 +241,33 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/areas/andheri': typeof AreasAndheriRoute
   '/areas/bandra': typeof AreasBandraRoute
+  '/areas/bhandup': typeof AreasBhandupRoute
+  '/areas/borivali': typeof AreasBorivaliRoute
+  '/areas/byculla': typeof AreasBycullaRoute
+  '/areas/chembur': typeof AreasChemburRoute
+  '/areas/churchgate': typeof AreasChurchgateRoute
   '/areas/dadar': typeof AreasDadarRoute
+  '/areas/ghatkopar': typeof AreasGhatkoparRoute
+  '/areas/goregaon': typeof AreasGoregaonRoute
+  '/areas/jogeshwari': typeof AreasJogeshwariRoute
+  '/areas/kandivali': typeof AreasKandivaliRoute
+  '/areas/kanjurmarg': typeof AreasKanjurmargRoute
+  '/areas/kurla': typeof AreasKurlaRoute
   '/areas/mahim': typeof AreasMahimRoute
+  '/areas/malad': typeof AreasMaladRoute
+  '/areas/matunga': typeof AreasMatungaRoute
   '/areas/mulund': typeof AreasMulundRoute
   '/areas/powai': typeof AreasPowaiRoute
+  '/areas/santacruz': typeof AreasSantacruzRoute
+  '/areas/sewri': typeof AreasSewriRoute
+  '/areas/sion': typeof AreasSionRoute
+  '/areas/vikhroli': typeof AreasVikhroliRoute
+  '/areas/vile-parle': typeof AreasVileParleRoute
+  '/areas/wadala': typeof AreasWadalaRoute
+  '/brands/bosch-washing-machine-repair-mumbai': typeof BrandsBoschWashingMachineRepairMumbaiRoute
+  '/brands/ifb-washing-machine-repair-mumbai': typeof BrandsIfbWashingMachineRepairMumbaiRoute
+  '/brands/lg-washing-machine-repair-mumbai': typeof BrandsLgWashingMachineRepairMumbaiRoute
+  '/brands/samsung-washing-machine-repair-mumbai': typeof BrandsSamsungWashingMachineRepairMumbaiRoute
   '/guides/siemens-washing-machine-error-codes': typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 export interface FileRoutesByTo {
@@ -114,10 +279,33 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/areas/andheri': typeof AreasAndheriRoute
   '/areas/bandra': typeof AreasBandraRoute
+  '/areas/bhandup': typeof AreasBhandupRoute
+  '/areas/borivali': typeof AreasBorivaliRoute
+  '/areas/byculla': typeof AreasBycullaRoute
+  '/areas/chembur': typeof AreasChemburRoute
+  '/areas/churchgate': typeof AreasChurchgateRoute
   '/areas/dadar': typeof AreasDadarRoute
+  '/areas/ghatkopar': typeof AreasGhatkoparRoute
+  '/areas/goregaon': typeof AreasGoregaonRoute
+  '/areas/jogeshwari': typeof AreasJogeshwariRoute
+  '/areas/kandivali': typeof AreasKandivaliRoute
+  '/areas/kanjurmarg': typeof AreasKanjurmargRoute
+  '/areas/kurla': typeof AreasKurlaRoute
   '/areas/mahim': typeof AreasMahimRoute
+  '/areas/malad': typeof AreasMaladRoute
+  '/areas/matunga': typeof AreasMatungaRoute
   '/areas/mulund': typeof AreasMulundRoute
   '/areas/powai': typeof AreasPowaiRoute
+  '/areas/santacruz': typeof AreasSantacruzRoute
+  '/areas/sewri': typeof AreasSewriRoute
+  '/areas/sion': typeof AreasSionRoute
+  '/areas/vikhroli': typeof AreasVikhroliRoute
+  '/areas/vile-parle': typeof AreasVileParleRoute
+  '/areas/wadala': typeof AreasWadalaRoute
+  '/brands/bosch-washing-machine-repair-mumbai': typeof BrandsBoschWashingMachineRepairMumbaiRoute
+  '/brands/ifb-washing-machine-repair-mumbai': typeof BrandsIfbWashingMachineRepairMumbaiRoute
+  '/brands/lg-washing-machine-repair-mumbai': typeof BrandsLgWashingMachineRepairMumbaiRoute
+  '/brands/samsung-washing-machine-repair-mumbai': typeof BrandsSamsungWashingMachineRepairMumbaiRoute
   '/guides/siemens-washing-machine-error-codes': typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 export interface FileRoutesById {
@@ -130,10 +318,33 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/areas/andheri': typeof AreasAndheriRoute
   '/areas/bandra': typeof AreasBandraRoute
+  '/areas/bhandup': typeof AreasBhandupRoute
+  '/areas/borivali': typeof AreasBorivaliRoute
+  '/areas/byculla': typeof AreasBycullaRoute
+  '/areas/chembur': typeof AreasChemburRoute
+  '/areas/churchgate': typeof AreasChurchgateRoute
   '/areas/dadar': typeof AreasDadarRoute
+  '/areas/ghatkopar': typeof AreasGhatkoparRoute
+  '/areas/goregaon': typeof AreasGoregaonRoute
+  '/areas/jogeshwari': typeof AreasJogeshwariRoute
+  '/areas/kandivali': typeof AreasKandivaliRoute
+  '/areas/kanjurmarg': typeof AreasKanjurmargRoute
+  '/areas/kurla': typeof AreasKurlaRoute
   '/areas/mahim': typeof AreasMahimRoute
+  '/areas/malad': typeof AreasMaladRoute
+  '/areas/matunga': typeof AreasMatungaRoute
   '/areas/mulund': typeof AreasMulundRoute
   '/areas/powai': typeof AreasPowaiRoute
+  '/areas/santacruz': typeof AreasSantacruzRoute
+  '/areas/sewri': typeof AreasSewriRoute
+  '/areas/sion': typeof AreasSionRoute
+  '/areas/vikhroli': typeof AreasVikhroliRoute
+  '/areas/vile-parle': typeof AreasVileParleRoute
+  '/areas/wadala': typeof AreasWadalaRoute
+  '/brands/bosch-washing-machine-repair-mumbai': typeof BrandsBoschWashingMachineRepairMumbaiRoute
+  '/brands/ifb-washing-machine-repair-mumbai': typeof BrandsIfbWashingMachineRepairMumbaiRoute
+  '/brands/lg-washing-machine-repair-mumbai': typeof BrandsLgWashingMachineRepairMumbaiRoute
+  '/brands/samsung-washing-machine-repair-mumbai': typeof BrandsSamsungWashingMachineRepairMumbaiRoute
   '/guides/siemens-washing-machine-error-codes': typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 export interface FileRouteTypes {
@@ -147,10 +358,33 @@ export interface FileRouteTypes {
     | '/terms'
     | '/areas/andheri'
     | '/areas/bandra'
+    | '/areas/bhandup'
+    | '/areas/borivali'
+    | '/areas/byculla'
+    | '/areas/chembur'
+    | '/areas/churchgate'
     | '/areas/dadar'
+    | '/areas/ghatkopar'
+    | '/areas/goregaon'
+    | '/areas/jogeshwari'
+    | '/areas/kandivali'
+    | '/areas/kanjurmarg'
+    | '/areas/kurla'
     | '/areas/mahim'
+    | '/areas/malad'
+    | '/areas/matunga'
     | '/areas/mulund'
     | '/areas/powai'
+    | '/areas/santacruz'
+    | '/areas/sewri'
+    | '/areas/sion'
+    | '/areas/vikhroli'
+    | '/areas/vile-parle'
+    | '/areas/wadala'
+    | '/brands/bosch-washing-machine-repair-mumbai'
+    | '/brands/ifb-washing-machine-repair-mumbai'
+    | '/brands/lg-washing-machine-repair-mumbai'
+    | '/brands/samsung-washing-machine-repair-mumbai'
     | '/guides/siemens-washing-machine-error-codes'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -162,10 +396,33 @@ export interface FileRouteTypes {
     | '/terms'
     | '/areas/andheri'
     | '/areas/bandra'
+    | '/areas/bhandup'
+    | '/areas/borivali'
+    | '/areas/byculla'
+    | '/areas/chembur'
+    | '/areas/churchgate'
     | '/areas/dadar'
+    | '/areas/ghatkopar'
+    | '/areas/goregaon'
+    | '/areas/jogeshwari'
+    | '/areas/kandivali'
+    | '/areas/kanjurmarg'
+    | '/areas/kurla'
     | '/areas/mahim'
+    | '/areas/malad'
+    | '/areas/matunga'
     | '/areas/mulund'
     | '/areas/powai'
+    | '/areas/santacruz'
+    | '/areas/sewri'
+    | '/areas/sion'
+    | '/areas/vikhroli'
+    | '/areas/vile-parle'
+    | '/areas/wadala'
+    | '/brands/bosch-washing-machine-repair-mumbai'
+    | '/brands/ifb-washing-machine-repair-mumbai'
+    | '/brands/lg-washing-machine-repair-mumbai'
+    | '/brands/samsung-washing-machine-repair-mumbai'
     | '/guides/siemens-washing-machine-error-codes'
   id:
     | '__root__'
@@ -177,10 +434,33 @@ export interface FileRouteTypes {
     | '/terms'
     | '/areas/andheri'
     | '/areas/bandra'
+    | '/areas/bhandup'
+    | '/areas/borivali'
+    | '/areas/byculla'
+    | '/areas/chembur'
+    | '/areas/churchgate'
     | '/areas/dadar'
+    | '/areas/ghatkopar'
+    | '/areas/goregaon'
+    | '/areas/jogeshwari'
+    | '/areas/kandivali'
+    | '/areas/kanjurmarg'
+    | '/areas/kurla'
     | '/areas/mahim'
+    | '/areas/malad'
+    | '/areas/matunga'
     | '/areas/mulund'
     | '/areas/powai'
+    | '/areas/santacruz'
+    | '/areas/sewri'
+    | '/areas/sion'
+    | '/areas/vikhroli'
+    | '/areas/vile-parle'
+    | '/areas/wadala'
+    | '/brands/bosch-washing-machine-repair-mumbai'
+    | '/brands/ifb-washing-machine-repair-mumbai'
+    | '/brands/lg-washing-machine-repair-mumbai'
+    | '/brands/samsung-washing-machine-repair-mumbai'
     | '/guides/siemens-washing-machine-error-codes'
   fileRoutesById: FileRoutesById
 }
@@ -193,10 +473,33 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   AreasAndheriRoute: typeof AreasAndheriRoute
   AreasBandraRoute: typeof AreasBandraRoute
+  AreasBhandupRoute: typeof AreasBhandupRoute
+  AreasBorivaliRoute: typeof AreasBorivaliRoute
+  AreasBycullaRoute: typeof AreasBycullaRoute
+  AreasChemburRoute: typeof AreasChemburRoute
+  AreasChurchgateRoute: typeof AreasChurchgateRoute
   AreasDadarRoute: typeof AreasDadarRoute
+  AreasGhatkoparRoute: typeof AreasGhatkoparRoute
+  AreasGoregaonRoute: typeof AreasGoregaonRoute
+  AreasJogeshwariRoute: typeof AreasJogeshwariRoute
+  AreasKandivaliRoute: typeof AreasKandivaliRoute
+  AreasKanjurmargRoute: typeof AreasKanjurmargRoute
+  AreasKurlaRoute: typeof AreasKurlaRoute
   AreasMahimRoute: typeof AreasMahimRoute
+  AreasMaladRoute: typeof AreasMaladRoute
+  AreasMatungaRoute: typeof AreasMatungaRoute
   AreasMulundRoute: typeof AreasMulundRoute
   AreasPowaiRoute: typeof AreasPowaiRoute
+  AreasSantacruzRoute: typeof AreasSantacruzRoute
+  AreasSewriRoute: typeof AreasSewriRoute
+  AreasSionRoute: typeof AreasSionRoute
+  AreasVikhroliRoute: typeof AreasVikhroliRoute
+  AreasVileParleRoute: typeof AreasVileParleRoute
+  AreasWadalaRoute: typeof AreasWadalaRoute
+  BrandsBoschWashingMachineRepairMumbaiRoute: typeof BrandsBoschWashingMachineRepairMumbaiRoute
+  BrandsIfbWashingMachineRepairMumbaiRoute: typeof BrandsIfbWashingMachineRepairMumbaiRoute
+  BrandsLgWashingMachineRepairMumbaiRoute: typeof BrandsLgWashingMachineRepairMumbaiRoute
+  BrandsSamsungWashingMachineRepairMumbaiRoute: typeof BrandsSamsungWashingMachineRepairMumbaiRoute
   GuidesSiemensWashingMachineErrorCodesRoute: typeof GuidesSiemensWashingMachineErrorCodesRoute
 }
 
@@ -258,6 +561,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasBandraRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas/bhandup': {
+      id: '/areas/bhandup'
+      path: '/areas/bhandup'
+      fullPath: '/areas/bhandup'
+      preLoaderRoute: typeof AreasBhandupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/borivali': {
+      id: '/areas/borivali'
+      path: '/areas/borivali'
+      fullPath: '/areas/borivali'
+      preLoaderRoute: typeof AreasBorivaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/byculla': {
+      id: '/areas/byculla'
+      path: '/areas/byculla'
+      fullPath: '/areas/byculla'
+      preLoaderRoute: typeof AreasBycullaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/chembur': {
+      id: '/areas/chembur'
+      path: '/areas/chembur'
+      fullPath: '/areas/chembur'
+      preLoaderRoute: typeof AreasChemburRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/churchgate': {
+      id: '/areas/churchgate'
+      path: '/areas/churchgate'
+      fullPath: '/areas/churchgate'
+      preLoaderRoute: typeof AreasChurchgateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/areas/dadar': {
       id: '/areas/dadar'
       path: '/areas/dadar'
@@ -265,11 +603,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasDadarRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas/ghatkopar': {
+      id: '/areas/ghatkopar'
+      path: '/areas/ghatkopar'
+      fullPath: '/areas/ghatkopar'
+      preLoaderRoute: typeof AreasGhatkoparRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/goregaon': {
+      id: '/areas/goregaon'
+      path: '/areas/goregaon'
+      fullPath: '/areas/goregaon'
+      preLoaderRoute: typeof AreasGoregaonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/jogeshwari': {
+      id: '/areas/jogeshwari'
+      path: '/areas/jogeshwari'
+      fullPath: '/areas/jogeshwari'
+      preLoaderRoute: typeof AreasJogeshwariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/kandivali': {
+      id: '/areas/kandivali'
+      path: '/areas/kandivali'
+      fullPath: '/areas/kandivali'
+      preLoaderRoute: typeof AreasKandivaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/kanjurmarg': {
+      id: '/areas/kanjurmarg'
+      path: '/areas/kanjurmarg'
+      fullPath: '/areas/kanjurmarg'
+      preLoaderRoute: typeof AreasKanjurmargRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/kurla': {
+      id: '/areas/kurla'
+      path: '/areas/kurla'
+      fullPath: '/areas/kurla'
+      preLoaderRoute: typeof AreasKurlaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/areas/mahim': {
       id: '/areas/mahim'
       path: '/areas/mahim'
       fullPath: '/areas/mahim'
       preLoaderRoute: typeof AreasMahimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/malad': {
+      id: '/areas/malad'
+      path: '/areas/malad'
+      fullPath: '/areas/malad'
+      preLoaderRoute: typeof AreasMaladRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/matunga': {
+      id: '/areas/matunga'
+      path: '/areas/matunga'
+      fullPath: '/areas/matunga'
+      preLoaderRoute: typeof AreasMatungaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas/mulund': {
@@ -284,6 +678,76 @@ declare module '@tanstack/react-router' {
       path: '/areas/powai'
       fullPath: '/areas/powai'
       preLoaderRoute: typeof AreasPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/santacruz': {
+      id: '/areas/santacruz'
+      path: '/areas/santacruz'
+      fullPath: '/areas/santacruz'
+      preLoaderRoute: typeof AreasSantacruzRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/sewri': {
+      id: '/areas/sewri'
+      path: '/areas/sewri'
+      fullPath: '/areas/sewri'
+      preLoaderRoute: typeof AreasSewriRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/sion': {
+      id: '/areas/sion'
+      path: '/areas/sion'
+      fullPath: '/areas/sion'
+      preLoaderRoute: typeof AreasSionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/vikhroli': {
+      id: '/areas/vikhroli'
+      path: '/areas/vikhroli'
+      fullPath: '/areas/vikhroli'
+      preLoaderRoute: typeof AreasVikhroliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/vile-parle': {
+      id: '/areas/vile-parle'
+      path: '/areas/vile-parle'
+      fullPath: '/areas/vile-parle'
+      preLoaderRoute: typeof AreasVileParleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/wadala': {
+      id: '/areas/wadala'
+      path: '/areas/wadala'
+      fullPath: '/areas/wadala'
+      preLoaderRoute: typeof AreasWadalaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brands/bosch-washing-machine-repair-mumbai': {
+      id: '/brands/bosch-washing-machine-repair-mumbai'
+      path: '/brands/bosch-washing-machine-repair-mumbai'
+      fullPath: '/brands/bosch-washing-machine-repair-mumbai'
+      preLoaderRoute: typeof BrandsBoschWashingMachineRepairMumbaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brands/ifb-washing-machine-repair-mumbai': {
+      id: '/brands/ifb-washing-machine-repair-mumbai'
+      path: '/brands/ifb-washing-machine-repair-mumbai'
+      fullPath: '/brands/ifb-washing-machine-repair-mumbai'
+      preLoaderRoute: typeof BrandsIfbWashingMachineRepairMumbaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brands/lg-washing-machine-repair-mumbai': {
+      id: '/brands/lg-washing-machine-repair-mumbai'
+      path: '/brands/lg-washing-machine-repair-mumbai'
+      fullPath: '/brands/lg-washing-machine-repair-mumbai'
+      preLoaderRoute: typeof BrandsLgWashingMachineRepairMumbaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brands/samsung-washing-machine-repair-mumbai': {
+      id: '/brands/samsung-washing-machine-repair-mumbai'
+      path: '/brands/samsung-washing-machine-repair-mumbai'
+      fullPath: '/brands/samsung-washing-machine-repair-mumbai'
+      preLoaderRoute: typeof BrandsSamsungWashingMachineRepairMumbaiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/guides/siemens-washing-machine-error-codes': {
@@ -305,10 +769,37 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   AreasAndheriRoute: AreasAndheriRoute,
   AreasBandraRoute: AreasBandraRoute,
+  AreasBhandupRoute: AreasBhandupRoute,
+  AreasBorivaliRoute: AreasBorivaliRoute,
+  AreasBycullaRoute: AreasBycullaRoute,
+  AreasChemburRoute: AreasChemburRoute,
+  AreasChurchgateRoute: AreasChurchgateRoute,
   AreasDadarRoute: AreasDadarRoute,
+  AreasGhatkoparRoute: AreasGhatkoparRoute,
+  AreasGoregaonRoute: AreasGoregaonRoute,
+  AreasJogeshwariRoute: AreasJogeshwariRoute,
+  AreasKandivaliRoute: AreasKandivaliRoute,
+  AreasKanjurmargRoute: AreasKanjurmargRoute,
+  AreasKurlaRoute: AreasKurlaRoute,
   AreasMahimRoute: AreasMahimRoute,
+  AreasMaladRoute: AreasMaladRoute,
+  AreasMatungaRoute: AreasMatungaRoute,
   AreasMulundRoute: AreasMulundRoute,
   AreasPowaiRoute: AreasPowaiRoute,
+  AreasSantacruzRoute: AreasSantacruzRoute,
+  AreasSewriRoute: AreasSewriRoute,
+  AreasSionRoute: AreasSionRoute,
+  AreasVikhroliRoute: AreasVikhroliRoute,
+  AreasVileParleRoute: AreasVileParleRoute,
+  AreasWadalaRoute: AreasWadalaRoute,
+  BrandsBoschWashingMachineRepairMumbaiRoute:
+    BrandsBoschWashingMachineRepairMumbaiRoute,
+  BrandsIfbWashingMachineRepairMumbaiRoute:
+    BrandsIfbWashingMachineRepairMumbaiRoute,
+  BrandsLgWashingMachineRepairMumbaiRoute:
+    BrandsLgWashingMachineRepairMumbaiRoute,
+  BrandsSamsungWashingMachineRepairMumbaiRoute:
+    BrandsSamsungWashingMachineRepairMumbaiRoute,
   GuidesSiemensWashingMachineErrorCodesRoute:
     GuidesSiemensWashingMachineErrorCodesRoute,
 }

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
 import { StickyMobileBar } from "@/components/site/ContactButtons";
-import { SITE } from "@/lib/site";
+import { SITE, BASE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -14,9 +14,10 @@ export const Route = createFileRoute("/privacy")({
           "Privacy policy for our independent Siemens washing machine repair service in Mumbai.",
       },
       { property: "og:title", content: "Privacy Policy" },
-      { property: "og:url", content: "/privacy" },
+      { property: "og:url", content: `${BASE_URL}/privacy` },
+      { name: "robots", content: "noindex, follow" },
     ],
-    links: [{ rel: "canonical", href: "/privacy" }],
+    links: [{ rel: "canonical", href: `${BASE_URL}/privacy` }],
   }),
   component: PrivacyPage,
 });

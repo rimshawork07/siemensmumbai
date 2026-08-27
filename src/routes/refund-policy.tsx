@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
 import { StickyMobileBar } from "@/components/site/ContactButtons";
-import { SITE } from "@/lib/site";
+import { SITE, BASE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/refund-policy")({
   head: () => ({
@@ -14,9 +14,10 @@ export const Route = createFileRoute("/refund-policy")({
           "Refund and cancellation policy for our independent Siemens washing machine repair service in Mumbai.",
       },
       { property: "og:title", content: "Refund & Cancellation Policy" },
-      { property: "og:url", content: "/refund-policy" },
+      { property: "og:url", content: `${BASE_URL}/refund-policy` },
+      { name: "robots", content: "noindex, follow" },
     ],
-    links: [{ rel: "canonical", href: "/refund-policy" }],
+    links: [{ rel: "canonical", href: `${BASE_URL}/refund-policy` }],
   }),
   component: RefundPolicyPage,
 });

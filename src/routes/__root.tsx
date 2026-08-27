@@ -12,6 +12,7 @@ import { initGA, trackPageView } from "../lib/analytics";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { BASE_URL, DEFAULT_OG_IMAGE, BRANDS } from "../lib/site";
 
 function NotFoundComponent() {
   return (
@@ -69,18 +70,56 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/#business`,
   name: "Siemens Washing Machine Repair Specialists in Mumbai",
   description:
     "Independent Siemens washing machine repair and service in Mumbai. Same-day service, genuine spare parts, experienced technicians, 1-year warranty.",
+  url: BASE_URL,
+  image: DEFAULT_OG_IMAGE,
   telephone: "+919833875771",
-  areaServed: "Mumbai",
+  priceRange: "₹₹",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Mumbai",
     addressRegion: "MH",
     addressCountry: "IN",
   },
-  priceRange: "₹₹",
+  // Reflects the booking form's actual time-slot range (9 AM – 9 PM, every day).
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "09:00",
+    closes: "21:00",
+  },
+  areaServed: [
+    { "@type": "City", name: "Mumbai" },
+    { "@type": "AdministrativeArea", name: "Western Line, Mumbai Suburban Railway" },
+    { "@type": "AdministrativeArea", name: "Central Line, Mumbai Suburban Railway" },
+    { "@type": "AdministrativeArea", name: "Harbour Line, Mumbai Suburban Railway" },
+  ],
+  // Brands serviced, in addition to the Siemens specialism — supports
+  // "<Brand> washing machine repair" search intent alongside the Siemens focus.
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Washing Machine Repair Services",
+    itemListElement: BRANDS.filter((b) => b !== "Other").map((b) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: `${b} Washing Machine Repair`,
+        serviceType: "Washing Machine Repair",
+        brand: { "@type": "Brand", name: b },
+      },
+    })),
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Siemens Washing Machine Repair Mumbai",
+  url: BASE_URL,
+  publisher: { "@id": `${BASE_URL}/#business` },
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -89,9 +128,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#2f9e5f" },
+      { name: "robots", content: "index, follow" },
       { property: "og:site_name", content: "Siemens Washing Machine Repair Mumbai" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_IN" },
+      { property: "og:image", content: DEFAULT_OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -103,7 +146,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(orgJsonLd) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(orgJsonLd) },
+      { type: "application/ld+json", children: JSON.stringify(websiteJsonLd) },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

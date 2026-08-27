@@ -21,7 +21,7 @@ import {
   Settings2,
   type LucideIcon,
 } from "lucide-react";
-import { SITE, AREA_GROUPS } from "@/lib/site";
+import { SITE, AREA_GROUPS, AREA_PAGES, BRAND_PAGES, BRANDS } from "@/lib/site";
 import { CallButton, WhatsAppButton, BookButton } from "./ContactButtons";
 import { BookingForm } from "./BookingForm";
 // import heroImgPtr from "@/assets/hero-siemens.png.asset.json";
@@ -573,14 +573,7 @@ export function Testimonials() {
 
 /* ---------------- SERVICE AREA ---------------- */
 
-const AREA_HIGHLIGHTS = [
-  { name: "Bandra", slug: "bandra" },
-  { name: "Mahim", slug: "mahim" },
-  { name: "Dadar", slug: "dadar" },
-  { name: "Andheri", slug: "andheri" },
-  { name: "Powai", slug: "powai" },
-  { name: "Mulund", slug: "mulund" },
-];
+const RAIL_LINES = ["Western Line", "Central Line", "Harbour Line"] as const;
 
 export function ServiceArea() {
   return (
@@ -627,22 +620,71 @@ export function ServiceArea() {
           Mumbai, helping us provide fast and reliable washing machine repair services.
         </p>
 
-        <div className="mt-6">
+        <div className="mt-8">
           <p className="text-center text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Popular localities
+            Stations we cover — Western, Central &amp; Harbour lines
           </p>
-          <div className="mt-3 flex flex-wrap justify-center gap-2">
-            {AREA_HIGHLIGHTS.map((a) => (
-              <a
-                key={a.slug}
-                href={`/areas/${a.slug}`}
-                className="rounded-full border border-border bg-white px-3.5 py-1.5 text-sm font-medium text-secondary shadow-sm transition hover:border-primary hover:text-primary"
-              >
-                {a.name}
-              </a>
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
+            {RAIL_LINES.map((line) => (
+              <div key={line} className="rounded-2xl border border-border bg-white p-4 shadow-sm">
+                <h4 className="text-sm font-bold text-secondary">{line}</h4>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {AREA_PAGES.filter((a) => a.line === line).map((a) => (
+                    <a
+                      key={a.slug}
+                      href={`/areas/${a.slug}`}
+                      className="rounded-full border border-border bg-accent/40 px-2.5 py-1 text-xs font-medium text-secondary transition hover:border-primary hover:text-primary"
+                    >
+                      {a.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- BRANDS WE REPAIR ---------------- */
+
+export function BrandsWeRepair() {
+  const linkedSlugs = new Set(BRAND_PAGES.map((b) => b.name));
+  return (
+    <section id="brands" className="mx-auto max-w-6xl px-4 py-10 sm:py-10">
+      <div className="text-center">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+          <WashingMachine className="h-3.5 w-3.5" /> Multi-Brand Repair
+        </span>
+        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-secondary sm:text-3xl">
+          Brands We Repair
+        </h2>
+        <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">
+          Siemens specialists — our technicians also repair all other major washing machine brands
+          across Mumbai.
+        </p>
+      </div>
+      <div className="mt-6 flex flex-wrap justify-center gap-2">
+        {BRANDS.filter((b) => b !== "Other").map((b) =>
+          linkedSlugs.has(b) ? (
+            <a
+              key={b}
+              href={`/brands/${BRAND_PAGES.find((bp) => bp.name === b)!.slug}`}
+              className="rounded-full border border-primary/30 bg-primary/5 px-3.5 py-1.5 text-sm font-semibold text-primary shadow-sm transition hover:border-primary hover:bg-primary/10"
+            >
+              {b} Washing Machine Repair
+            </a>
+          ) : (
+            <span
+              key={b}
+              className="rounded-full border border-border bg-white px-3.5 py-1.5 text-sm font-medium text-secondary shadow-sm"
+            >
+              {b}
+            </span>
+          ),
+        )}
       </div>
     </section>
   );

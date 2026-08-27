@@ -1,15 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { SITE } from "@/lib/site";
+import { SITE, AREA_PAGES, BRAND_PAGES } from "@/lib/site";
 import { Phone, MessageCircle } from "lucide-react";
-
-const AREA_LINKS: Array<{ name: string; href: string }> = [
-  { name: "Bandra", href: "/areas/bandra" },
-  { name: "Andheri", href: "/areas/andheri" },
-  { name: "Dadar", href: "/areas/dadar" },
-  { name: "Mahim", href: "/areas/mahim" },
-  { name: "Powai", href: "/areas/powai" },
-  { name: "Mulund", href: "/areas/mulund" },
-];
 
 const ZONES = [
   "South Mumbai",
@@ -48,15 +39,28 @@ export function SiteFooter() {
 
         <div className="md:col-span-2">
           <h4 className="text-sm font-bold uppercase tracking-wide text-muted-foreground">
-            Areas We Serve
+            Areas We Serve — Western, Central &amp; Harbour Lines
           </h4>
           <p className="mt-2 text-xs text-muted-foreground">{ZONES.join(" · ")}</p>
           <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1 text-sm sm:grid-cols-3">
-            {AREA_LINKS.map((a) => (
-              <li key={a.name}>
-                <Link to={a.href} className="hover:text-primary">
+            {AREA_PAGES.map((a) => (
+              <li key={a.slug}>
+                <a href={`/areas/${a.slug}`} className="hover:text-primary">
                   {a.name}
-                </Link>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <h4 className="mt-6 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+            Popular Brands
+          </h4>
+          <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1 text-sm sm:grid-cols-4">
+            {BRAND_PAGES.map((b) => (
+              <li key={b.slug}>
+                <a href={`/brands/${b.slug}`} className="hover:text-primary">
+                  {b.name}
+                </a>
               </li>
             ))}
           </ul>
@@ -70,6 +74,11 @@ export function SiteFooter() {
             <li>
               <Link to="/about" className="hover:text-primary">
                 About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/guides/siemens-washing-machine-error-codes" className="hover:text-primary">
+                Error Code Guide
               </Link>
             </li>
             <li>

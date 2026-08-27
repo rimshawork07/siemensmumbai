@@ -2,23 +2,40 @@
 
 > Independent Siemens washing machine repair service in Mumbai. Same-day service, genuine spare parts, experienced technicians, and 1+ year warranty on installed parts.
 
-We are an independent repair service (not an official Siemens service centre) specialising in Siemens washing machines across Mumbai and its suburbs. We also service all other major washing machine brands.
+We are an independent repair service (not an official Siemens service centre) specialising in Siemens washing machines across Mumbai and its suburbs. We also repair all other major washing machine brands, including Samsung, LG, IFB, Bosch, Whirlpool, Godrej, Haier, Panasonic, Onida and Videocon.
 
 Contact: +91 98338 75771 · WhatsApp: https://wa.me/919833875771
+Service hours: 9 AM – 9 PM, every day.
 
 ## Pages
 
 - [Home](/): Overview of our Siemens washing machine repair service in Mumbai.
+- [About Us](/about): Who we are, what we do, and where we operate.
 - [Siemens error code guide](/guides/siemens-washing-machine-error-codes): Common Siemens washing machine error codes (E18, F16, F21, etc.) and what they mean.
 - [Privacy Policy](/privacy): How we handle your contact details.
 - [Terms & Conditions](/terms): Service, warranty and payment terms.
 
-## Service areas
+## Brands we repair
 
-- [Bandra](/areas/bandra): Siemens washing machine repair in Bandra.
-- [Andheri](/areas/andheri): Siemens washing machine repair in Andheri.
-- [Dadar](/areas/dadar): Siemens washing machine repair in Dadar.
-- [Mahim](/areas/mahim): Siemens washing machine repair in Mahim.
-- [Powai](/areas/powai): Siemens washing machine repair in Powai.
-- [Mulund](/areas/mulund): Siemens washing machine repair in Mulund.
+- [Samsung washing machine repair](/brands/samsung-washing-machine-repair-mumbai): Samsung front-load and top-load repair across Mumbai.
+- [LG washing machine repair](/brands/lg-washing-machine-repair-mumbai): LG Direct Drive front-load and top-load repair across Mumbai.
+- [IFB washing machine repair](/brands/ifb-washing-machine-repair-mumbai): IFB front-load and top-load repair across Mumbai.
+- [Bosch washing machine repair](/brands/bosch-washing-machine-repair-mumbai): Bosch repair across Mumbai (Bosch and Siemens share the same manufacturer, BSH Hausgeräte, and a similar error-code system).
 
+## Service areas — Mumbai Western Line
+
+- [Churchgate](/areas/churchgate), [Bandra](/areas/bandra), [Mahim](/areas/mahim), [Santacruz](/areas/santacruz), [Vile Parle](/areas/vile-parle), [Andheri](/areas/andheri), [Jogeshwari](/areas/jogeshwari), [Goregaon](/areas/goregaon), [Malad](/areas/malad), [Kandivali](/areas/kandivali), [Borivali](/areas/borivali)
+
+## Service areas — Mumbai Central Line
+
+- [Byculla](/areas/byculla), [Dadar](/areas/dadar), [Matunga](/areas/matunga), [Sion](/areas/sion), [Kurla](/areas/kurla), [Ghatkopar](/areas/ghatkopar), [Vikhroli](/areas/vikhroli), [Kanjurmarg](/areas/kanjurmarg), [Bhandup](/areas/bhandup), [Mulund](/areas/mulund)
+
+## Service areas — Mumbai Harbour Line
+
+- [Wadala](/areas/wadala), [Sewri](/areas/sewri), [Chembur](/areas/chembur)
+
+## Other service areas
+
+- [Powai](/areas/powai): Not directly on a suburban rail line — nearest stations are Vikhroli and Kanjurmarg on the Central Line.
+
+We provide washing machine repair services throughout South Mumbai, Central Mumbai, Western Mumbai and Eastern Mumbai — covering stations on the Western, Central and Harbour lines of the Mumbai Suburban Railway.

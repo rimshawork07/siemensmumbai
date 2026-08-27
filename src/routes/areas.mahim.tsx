@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AreaPage, areaHead } from "@/components/site/AreaPage";
+import { AREA_PAGES } from "@/lib/site";
+
+const area = AREA_PAGES.find((a) => a.slug === "mahim")!;
 
 export const Route = createFileRoute("/areas/mahim")({
-  head: () => areaHead("Mahim", "mahim"),
-  component: () => <AreaPage area="Mahim" />,
+  head: () => areaHead(area.name, area.slug, area.line),
+  component: () => <AreaPage area={area.name} line={area.line} landmark={area.landmark} />,
 });
